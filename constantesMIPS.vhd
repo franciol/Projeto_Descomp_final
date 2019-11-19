@@ -28,23 +28,32 @@ package constantesMIPS is
     constant functAND : funct_t := "100100";
     constant functOR  : funct_t := "100101";
     constant functSLT : funct_t := "101010";
+    constant functJR  : funct_t := "001000";
 
     constant opCodeTipoR         : opCode_t := "000000";
 --
     constant opCodeLW            : opCode_t := "100011";
     constant opCodeSW            : opCode_t := "101011";
     constant opCodeBEQ           : opCode_t := "000100";
---
-    constant opCodeTipoJ         : opCode_t := "000010";
+    constant opCodeBNE           : opCode_t := "000101";
+    
+    constant opCodeLUI           : opCode_t := "001111":
+    constant opCodeADDI          : opCode_t := "001000";
+    constant opCodeANDI          : opCode_t := "001100";
+    constant opCodeORI           : opCode_t := "001101";
+    constant opCodeSLTI          : opCode_t := "001010";
 
+    constant opCodeJAL           : opCode_t := "000011";
+    constant opCodeJ             : opCode_t := "000010";
+--
     -- ALU ---
-    constant readFunctULA : aluOp_t := "000";
-    constant aluOpAdd : aluOp_t := "001";
-    constant aluOpSub : aluOp_t := "010";
-    constant aluOpAnd : aluOp_t := "011";
-    constant aluOpOr  : aluOp_t := "100";
-    constant aluOpSlt : aluOp_t := "101";
-    constant aluOpDC : aluOp_t := "XXX";
+    constant readFunctULA        : aluOp_t := "000";
+    constant aluOpAdd            : aluOp_t := "001";
+    constant aluOpSub            : aluOp_t := "010";
+    constant aluOpAnd            : aluOp_t := "011";
+    constant aluOpOr             : aluOp_t := "100";
+    constant aluOpSlt            : aluOp_t := "101";
+    constant aluOpDC             : aluOp_t := "XXX";
 
     -- ALUctr:
     -- 3: inverteA
