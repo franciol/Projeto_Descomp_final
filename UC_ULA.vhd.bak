@@ -1,0 +1,47 @@
+-- Design de Computadores
+-- file: UC_ULA.vhd
+-- date: 18/10/2019
+
+library ieee;
+use ieee.std_logic_1164.all;
+use work.constantesMIPS.all;
+
+entity UC_ULA is
+	port
+    (
+        funct               : IN STD_LOGIC_VECTOR(FUNCT_WIDTH-1 DOWNTO 0);
+        ALUop               : IN STD_LOGIC_VECTOR(ALU_OP_WIDTH-1 DOWNTO 0);
+        ALUctr              : OUT STD_LOGIC_VECTOR(CTRL_ALU_WIDTH-1 DOWNTO 0)
+    );
+end entity;
+
+architecture bhv of UC_ULA is	
+    constant zero : std_logic_vector(CTRL_ALU_WIDTH-1 downto 0) := (others => '0');
+    signal ALUop_s : STD_LOGIC_VECTOR(ALU_OP_WIDTH-1 DOWNTO 0);
+    signal funct_res : STD_LOGIC_VECTOR(CTRL_ALU_WIDTH-1 DWONTO 0);
+begin
+    process(ALL):
+        case funct is
+            WHEN functADD => funct_res <= ulaCtrlAdd;
+            WHEN functSUB => funct_res <= ulaCtrlSub;
+            WHEN functAND => funct_res <= ulaCtrlAnd;
+            WHEN functOR => funct_res <= ulaCtrlOr;
+            WHEN functSLT => funct_res <= ulaCtrlSlt;
+            when others => funct_res <= "0000";
+        end case
+
+
+        case ALUop is
+            WHEN readFunctULA => ALUctr <= funct_res;
+            WHEN aluOpAdd => ALUctr <= ulaCtrlAdd;
+            WHEN aluOpSub => ALUctr <= ulaCtrlSub;
+            WHEN aluOpAnd => ALUctr <= ulaCtrlAnd;
+            WHEN aluOpOr => ALUctr <= ulaCtrlOr;
+            WHEN aluOpSlt => ALUctr <= ulaCtrlSlt;
+            WHEN aluOpDC => ALUctr <= zero;
+            WHEN others => ALUctr <= zero;
+        end case;
+
+    end process;
+
+end bhv;

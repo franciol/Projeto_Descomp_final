@@ -1,0 +1,35 @@
+Quartus Prime Archive log --	/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.qarlog
+
+Archive:	/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.qar
+Date:		Thu Nov 14 16:30:08 2019
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/ROM.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/Registrador.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/UC_ULA.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/ULA.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/Waveform.vwf
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/Waveform1.vwf
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/Waveform2.vwf
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/Waveform3.vwf
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/assignment_defaults.qdf
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/bancoRegistradores.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/clock_generator.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/constantesMIPS.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/estendeSinalGenerico.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.qpf
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.qsf
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/muxGenerico2.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/shift2.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/shift2_imediato.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/single_port_RAM.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/soma4.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/somador.vhd
+/home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/uc.vhd
+	======= Total: 24 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
