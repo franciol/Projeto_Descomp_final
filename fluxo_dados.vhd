@@ -14,10 +14,7 @@ entity fluxo_dados is
     (
         clk			            : IN STD_LOGIC;
         pontosDeControle        : IN STD_LOGIC_VECTOR(CONTROLWORD_WIDTH-1 DOWNTO 0);
-        instrucao               : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
-		  
-		  pc_out							:  OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 downto 0);
-		  ula_out 						: OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 downto 0)
+        instrucao               : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
     );
 end entity;
 
@@ -49,7 +46,8 @@ architecture estrutural of fluxo_dados is
     signal saida_shift_jump : std_logic_vector(27 downto 0);
             
     -- Sinais auxiliares dos MUXs
-    signal sel_mux_beq : std_logic;
+	 signal beq_or_bne : std_logic;
+	 signal saida_mux_zout : std_logic;
     signal saida_mux_ula_mem, saida_mux_banco_ula, saida_mux_beq, saida_mux_jump : std_logic_vector(DATA_WIDTH-1 downto 0);
     signal saida_mux_rd_rt : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0);
      
@@ -57,8 +55,9 @@ architecture estrutural of fluxo_dados is
     signal ULActr : std_logic_vector(CTRL_ALU_WIDTH-1 downto 0);
 
     -- Codigos da palavra de controle:
-    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(10 downto 8);
-    alias escreve_RC        : std_logic is pontosDeControle(7);
+    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(11 downto 9);
+    alias sel_bne           : std_logic is pontosDeControle(8);
+	 alias escreve_RC        : std_logic is pontosDeControle(7);
     alias escreve_RAM       : std_logic is pontosDeControle(6);
     alias leitura_RAM       : std_logic is pontosDeControle(5);
     alias sel_mux_ula_mem   : std_logic is pontosDeControle(4);
@@ -77,8 +76,8 @@ architecture estrutural of fluxo_dados is
 begin
 
     instrucao <= instrucao_s;
-
-    sel_mux_beq <= sel_beq AND Z_out;
+	 
+	 beq_or_bne <= sel_beq OR sel_bne;
 
     -- Ajuste do PC para jump (concatena com imediato multiplicado por 4)
     PC_4_concat_imed <= PC_mais_4(31 downto 28) & saida_shift_jump;
@@ -250,8 +249,19 @@ begin
 		port map (
             entradaA => PC_mais_4,
             entradaB => PC_mais_4_mais_imediato,
-            seletor  => sel_mux_beq,
+            seletor  => saida_mux_zout AND beq_or_bne,
             saida    => saida_mux_beq
+        );
+
+	  mux_zout: entity work.muxGenerico2 
+        generic map (
+            larguraDados => 1
+        )
+		port map (
+            entradaA => NOT(Z_out),
+            entradaB => Z_out,
+            seletor  => sel_beq,
+            saida    => saida_mux_zout
         );
 		
      mux_jump: entity work.muxGenerico2 
@@ -264,8 +274,5 @@ begin
             seletor  => sel_mux_jump,
             saida    => saida_mux_jump
         );
-		  
-		pc_out <= PC_s;
-		ula_out <= saida_ula;
 
 end architecture;
