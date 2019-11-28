@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mips
-Thu Nov 14 16:21:26 2019
+Thu Nov 28 15:28:34 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -62,7 +62,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 14 16:21:26 2019       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 28 15:28:34 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; mips                                        ;
 ; Top-level Entity Name              ; mips                                        ;
@@ -1385,7 +1385,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -1395,17 +1395,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 14 16:21:07 2019
+    Info: Processing started: Thu Nov 28 15:28:08 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mips -c mips
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ULA.vhd
     Info (12022): Found design unit 1: ULA-behv File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/ULA.vhd Line: 24
     Info (12023): Found entity 1: ULA File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/ULA.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file UC_ULA.vhd
-    Info (12022): Found design unit 1: UC_ULA-bhv File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/UC_ULA.vhd Line: 18
+    Info (12022): Found design unit 1: UC_ULA-bhv File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/UC_ULA.vhd Line: 17
     Info (12023): Found entity 1: UC_ULA File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/UC_ULA.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file uc.vhd
-    Info (12022): Found design unit 1: uc-bhv File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/uc.vhd Line: 17
+    Info (12022): Found design unit 1: uc-bhv File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/uc.vhd Line: 16
     Info (12023): Found entity 1: uc File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/uc.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
     Info (12022): Found design unit 1: somador-comportamento File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/somador.vhd Line: 18
@@ -1432,7 +1432,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file muxGene
     Info (12022): Found design unit 1: muxGenerico2-comportamento File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/muxGenerico2.vhd Line: 17
     Info (12023): Found entity 1: muxGenerico2 File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/muxGenerico2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file mips.vhd
-    Info (12022): Found design unit 1: mips-estrutural File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 19
+    Info (12022): Found design unit 1: mips-estrutural File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 18
     Info (12023): Found entity 1: mips File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file fluxo_dados.vhd
     Info (12022): Found design unit 1: fluxo_dados-estrutural File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd Line: 24
@@ -1449,7 +1449,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file bancoRe
     Info (12022): Found design unit 1: bancoRegistradores-rtl File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/bancoRegistradores.vhd Line: 30
     Info (12023): Found entity 1: bancoRegistradores File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/bancoRegistradores.vhd Line: 6
 Info (12127): Elaborating entity "mips" for the top level hierarchy
-Info (12128): Elaborating entity "fluxo_dados" for hierarchy "fluxo_dados:FD" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 38
+Info (12128): Elaborating entity "fluxo_dados" for hierarchy "fluxo_dados:FD" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 37
 Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "fluxo_dados:FD|bancoRegistradores:BR" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd Line: 87
 Warning (10631): VHDL Process Statement warning at bancoRegistradores.vhd(80): inferring latch(es) for signal or variable "saidaA", which holds its previous value in one or more paths through the process File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/bancoRegistradores.vhd Line: 80
 Info (10041): Inferred latch for "saidaA[0]" at bancoRegistradores.vhd(80) File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/bancoRegistradores.vhd Line: 80
@@ -1486,9 +1486,9 @@ Info (10041): Inferred latch for "saidaA[30]" at bancoRegistradores.vhd(80) File
 Info (10041): Inferred latch for "saidaA[31]" at bancoRegistradores.vhd(80) File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/bancoRegistradores.vhd Line: 80
 Info (12128): Elaborating entity "ULA" for hierarchy "fluxo_dados:FD|ULA:ULA" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd Line: 104
 Info (12128): Elaborating entity "UC_ULA" for hierarchy "fluxo_dados:FD|UC_ULA:UCULA" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd Line: 116
-Warning (10620): VHDL warning at UC_ULA.vhd(28): comparison between unequal length operands always returns FALSE File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/UC_ULA.vhd Line: 28
-Warning (10620): VHDL warning at UC_ULA.vhd(27): comparison between unequal length operands always returns FALSE File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/UC_ULA.vhd Line: 27
 Warning (10620): VHDL warning at UC_ULA.vhd(26): comparison between unequal length operands always returns FALSE File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/UC_ULA.vhd Line: 26
+Warning (10620): VHDL warning at UC_ULA.vhd(25): comparison between unequal length operands always returns FALSE File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/UC_ULA.vhd Line: 25
+Warning (10620): VHDL warning at UC_ULA.vhd(24): comparison between unequal length operands always returns FALSE File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/UC_ULA.vhd Line: 24
 Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:PC" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd Line: 125
 Info (12128): Elaborating entity "somador" for hierarchy "fluxo_dados:FD|somador:Somador_imediato" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd Line: 137
 Info (12128): Elaborating entity "soma4" for hierarchy "fluxo_dados:FD|soma4:Somador" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd Line: 147
@@ -1499,13 +1499,13 @@ Info (12128): Elaborating entity "shift2_imediato" for hierarchy "fluxo_dados:FD
 Info (12128): Elaborating entity "shift2" for hierarchy "fluxo_dados:FD|shift2:shift_jump" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd Line: 203
 Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_Ula_Memoria" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd Line: 213
 Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_Rd_Rt" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/fluxo_dados.vhd Line: 224
-Info (12128): Elaborating entity "uc" for hierarchy "uc:UC" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 49
+Info (12128): Elaborating entity "uc" for hierarchy "uc:UC" File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 48
 Info (276014): Found 2 instances of uninferred RAM logic
     Info (276007): RAM logic "fluxo_dados:FD|bancoRegistradores:BR|bancoReg" is uninferred due to asynchronous read logic File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/bancoRegistradores.vhd Line: 56
     Info (276007): RAM logic "fluxo_dados:FD|single_port_RAM:RAM|ram" is uninferred due to asynchronous read logic File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/single_port_RAM.vhd Line: 23
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "program_c_out[0]" is stuck at GND File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 14
-    Warning (13410): Pin "program_c_out[1]" is stuck at GND File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 14
+    Warning (13410): Pin "program_c_out[0]" is stuck at GND File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[1]" is stuck at GND File: /home/francisco/Documentos/Insper/6Semestre/DesignComputadores/mips-SemUC_restored/mips.vhd Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 768 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -1515,9 +1515,9 @@ Info (21057): Implemented 4144 device resources after synthesis - the final reso
     Info (21059): Implemented 64 output pins
     Info (21061): Implemented 4079 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1013 megabytes
-    Info: Processing ended: Thu Nov 14 16:21:26 2019
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Peak virtual memory: 993 megabytes
+    Info: Processing ended: Thu Nov 28 15:28:34 2019
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:31
 
 

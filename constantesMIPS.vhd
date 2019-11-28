@@ -37,7 +37,7 @@ package constantesMIPS is
     constant opCodeBEQ           : opCode_t := "000100";
     constant opCodeBNE           : opCode_t := "000101";
     
-    constant opCodeLUI           : opCode_t := "001111":
+    constant opCodeLUI           : opCode_t := "001111";
     constant opCodeADDI          : opCode_t := "001000";
     constant opCodeANDI          : opCode_t := "001100";
     constant opCodeORI           : opCode_t := "001101";
@@ -67,6 +67,7 @@ package constantesMIPS is
     constant ulaCtrlSlt : ctrlALU_t := "0111";
 
     -- Pontos de controle:
+    -- 8: sel_mux_bne           0 PC+4  1 PC+4+imediato
     -- 7: escreve_RC
     -- 6: escreve_RAM
     -- 5: leitura_RAM
@@ -76,13 +77,15 @@ package constantesMIPS is
     -- 1: sel_mux_beq:          0 PC+4  1 PC+4+imediato
     -- 0: sel_mux_jump:         0 saida mux_beq 1 PC+4 & imediato
 
--- ControlWorld Bit:    10-8        7             6             5               4                3                 2                 1               0
---Instrução  Opcode     ALUop   escreve_RC   escreve_RAM   leitura_RAM   sel_mux_ula_mem   sel_mux_rd_rt   sel_mux_banco_ula    sel_mux_beq     sel_mux_jump
---Tipo R    |00.0000  | read  |     1      |      0      |      X      |        0        |       1       |         0         |       0       |       0       |
---J         |00.0010  | X     |     0      |      0      |      X      |        X        |       X       |         X         |       0       |       1       |
---BEQ       |00.0100  | sub   |     0      |      0      |      X      |        X        |       X       |         0         |       1       |       0       |
---LW        |10.0011  | add   |     1      |      0      |      1      |        1        |       0       |         1         |       0       |       0       |
---SW        |10.1011  | add   |     0      |      1      |      X      |        X        |       X       |         1         |       0       |       0       |
+-- ControlWorld Bit:    11-9        8            7             6             5               4                3                 2                 1               0
+--Instrução  Opcode     ALUop   sel_mux_bne  escreve_RC  escreve_RAM   leitura_RAM   sel_mux_ula_mem   sel_mux_rd_rt   sel_mux_banco_ula    sel_mux_beq     sel_mux_jump
+--Tipo R    |00.0000  | read  |     0      |     1      |      0      |      X      |        0        |       1       |         0         |       0       |       0       |
+--J         |00.0010  | X     |     0      |     0      |      0      |      X      |        X        |       X       |         X         |       0       |       1       |
+--BEQ       |00.0100  | sub   |     0      |     0      |      0      |      X      |        X        |       X       |         0         |       1       |       0       |
+--BNE       |00.0101  | sub   |     1      |     0      |      0      |      X      |        X        |       X       |         0         |       0       |       0       | 
+--LW        |10.0011  | add   |     0      |     1      |      0      |      1      |        1        |       0       |         1         |       0       |       0       |
+--SW        |10.1011  | add   |     0      |     0      |      1      |      X      |        X        |       X       |         1         |       0       |       0       |
+--LUI       |10.1011  | add   |     0      |     0      |      1      |      X      |        X        |       X       |         1         |       0       |       0       |
 
 --  Mux1: mux([PC+4, BEQ]/J);  Mux2: mux(Rt/Rd); Mux3: mux(Rt/imediato);  Mux4: mux(ULA/mem).
 
