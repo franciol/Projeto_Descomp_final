@@ -48,16 +48,17 @@ architecture estrutural of fluxo_dados is
     -- Sinais auxiliares dos MUXs
 	 signal beq_or_bne : std_logic;
 	 signal saida_mux_zout : std_logic;
-    signal saida_mux_ula_mem, saida_mux_banco_ula, saida_mux_beq, saida_mux_jump : std_logic_vector(DATA_WIDTH-1 downto 0);
+    signal saida_mux_ula_mem, saida_mux_banco_ula, saida_mux_beq, saida_mux_jump, saida_mux_jr : std_logic_vector(DATA_WIDTH-1 downto 0);
     signal saida_mux_rd_rt : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0);
      
     -- Controle da ULA
     signal ULActr : std_logic_vector(CTRL_ALU_WIDTH-1 downto 0);
 
     -- Codigos da palavra de controle:
-    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(11 downto 9);
+    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(12 downto 10);
+    alias sel_mux_jr        : std_logic is pontosDeControle(9);
     alias sel_bne           : std_logic is pontosDeControle(8);
-	 alias escreve_RC        : std_logic is pontosDeControle(7);
+	alias escreve_RC        : std_logic is pontosDeControle(7);
     alias escreve_RAM       : std_logic is pontosDeControle(6);
     alias leitura_RAM       : std_logic is pontosDeControle(5);
     alias sel_mux_ula_mem   : std_logic is pontosDeControle(4);
@@ -209,26 +210,39 @@ begin
         );
     
     -- MUXs
-     mux_Ula_Memoria: entity work.muxGenerico2 
+     mux_Ula_Memoria: entity work.muxGenerico4 
         generic map (
             larguraDados => DATA_WIDTH
         )
 		port map (
             entradaA => saida_ula, 
-            entradaB => dado_lido_mem, 
+            entradaB => dado_lido_mem,
+            entradaC => PC_mais_4,
             seletor  => sel_mux_ula_mem,
             saida    => saida_mux_ula_mem
         );
 	 
-     mux_Rd_Rt: entity work.muxGenerico2 
+     mux_Rd_Rt: entity work.muxGenerico4 
         generic map (
             larguraDados => REGBANK_ADDR_WIDTH
         )
 		port map (
             entradaA => RT_addr, 
             entradaB => RD_addr,
+            entradaC => ###################################################################,
             seletor  => sel_mux_rd_rt,
             saida    => saida_mux_rd_rt
+        );
+    
+     mux_jr: entity work.muxGenerico2
+        generic map (
+            larguraDados => DATA_WIDTH
+        )
+		port map (
+            entradaA => saida_mux_beq, 
+            entradaB => RA,  
+            seletor  => sel_mux_jr,
+            saida    => saida_mux_jr
         );
 	
      mux_Banco_Ula: entity work.muxGenerico2 
@@ -269,7 +283,7 @@ begin
             larguraDados => DATA_WIDTH
         )
 		port map (
-            entradaA => saida_mux_beq,
+            entradaA => saida_mux_jr,
             entradaB => PC_4_concat_imed,
             seletor  => sel_mux_jump,
             saida    => saida_mux_jump
