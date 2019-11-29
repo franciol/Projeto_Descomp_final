@@ -58,7 +58,7 @@ architecture estrutural of fluxo_dados is
     alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(12 downto 10);
     alias sel_mux_jr        : std_logic is pontosDeControle(9);
     alias sel_bne           : std_logic is pontosDeControle(8);
-	alias escreve_RC        : std_logic is pontosDeControle(7);
+	 alias escreve_RC        : std_logic is pontosDeControle(7);
     alias escreve_RAM       : std_logic is pontosDeControle(6);
     alias leitura_RAM       : std_logic is pontosDeControle(5);
     alias sel_mux_ula_mem   : std_logic is pontosDeControle(4);
@@ -229,7 +229,7 @@ begin
 		port map (
             entradaA => RT_addr, 
             entradaB => RD_addr,
-            entradaC => ###################################################################,
+            --entradaC => ###########################,
             seletor  => sel_mux_rd_rt,
             saida    => saida_mux_rd_rt
         );
