@@ -1,5 +1,5 @@
 Assembler report for mips
-Tue Dec  3 15:26:03 2019
+Tue Dec  3 19:19:00 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Dec  3 15:26:03 2019 ;
+; Assembler Status      ; Successful - Tue Dec  3 19:19:00 2019 ;
 ; Revision Name         ; mips                                  ;
 ; Top-level Entity Name ; mips                                  ;
 ; Family                ; Cyclone IV E                          ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-------------------+
 ; Option         ; Setting           ;
 +----------------+-------------------+
-; JTAG usercode  ; 0x0088E757        ;
-; Checksum       ; 0x0088E757        ;
+; JTAG usercode  ; 0x00882185        ;
+; Checksum       ; 0x00882185        ;
 +----------------+-------------------+
 
 
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Dec  3 15:25:59 2019
+    Info: Processing started: Tue Dec  3 19:18:57 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off mips -c mips
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 852 megabytes
-    Info: Processing ended: Tue Dec  3 15:26:03 2019
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Processing ended: Tue Dec  3 19:19:00 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:04
 
 

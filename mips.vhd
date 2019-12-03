@@ -11,7 +11,10 @@ ENTITY mips IS
         clk : IN STD_LOGIC;
         inst_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         program_c_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-        ula_signal_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0)
+        ula_signal_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+
+        saidaA : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+        saidaB : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0)
     );
 END ENTITY;
 
@@ -41,7 +44,9 @@ BEGIN
             instrucao => instrucao,
 
             pc_out => program_c_out,
-            ula_out => ula_signal_out
+            ula_out => ula_signal_out,
+            saidaA1 => saidaA,
+            saidaB1 => saidaB
         );
 
     UC : ENTITY work.uc

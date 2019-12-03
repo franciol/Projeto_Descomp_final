@@ -17,7 +17,9 @@ entity fluxo_dados is
         instrucao               : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
 
         pc_out                  : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
-        ula_out                 : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
+        ula_out                 : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
+        saidaA1                 : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0); 
+        saidaB1                 : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
     );
 end entity;
 
@@ -310,5 +312,7 @@ begin
         );
 
 		  pc_out <= PC_s;
-		  ula_out <= saida_ula;
+          ula_out <= saida_ula;
+          saidaA1 <= RA;
+          saidaB1 <= saida_mux_banco_ula;
 end architecture;
