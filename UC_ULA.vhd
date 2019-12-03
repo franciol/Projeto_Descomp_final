@@ -21,9 +21,9 @@ ARCHITECTURE bhv OF UC_ULA IS
 BEGIN
     funct_res <= ulaCtrlAdd WHEN funct = functADD ELSE
         ulaCtrlSub WHEN funct = functSUB ELSE
-        functAND WHEN funct = ulaCtrlAnd ELSE
-        functOR WHEN funct = ulaCtrlOr ELSE
-        functSLT WHEN funct = ulaCtrlSlt ELSE
+        ulaCtrlAnd WHEN funct = functAND ELSE
+        ulaCtrlOr  WHEN funct = functOR  ELSE
+        ulaCtrlSlt WHEN funct = functSLT ELSE
         ("0000");
 
     ALUctr <= funct_res WHEN ALUop = readFunctULA ELSE

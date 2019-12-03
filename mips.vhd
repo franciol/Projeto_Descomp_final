@@ -23,8 +23,6 @@ ARCHITECTURE estrutural OF mips IS
     SIGNAL ALUop : STD_LOGIC_VECTOR(ALU_OP_WIDTH - 1 DOWNTO 0);
     SIGNAL ALUctr : STD_LOGIC_VECTOR(CTRL_ALU_WIDTH - 1 DOWNTO 0);
 
-    SIGNAL ulaOut : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-    SIGNAL pcOut : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
     -- Sinal de clock auxiliar para simulação
     -- signal clk  : STD_LOGIC;
 
@@ -42,8 +40,8 @@ BEGIN
             pontosDeControle => pontosDeControle,
             instrucao => instrucao,
 
-            pc_out => pcOut,
-            ula_out => ulaOut
+            pc_out => program_c_out,
+            ula_out => ula_signal_out
         );
 
     UC : ENTITY work.uc
@@ -53,8 +51,5 @@ BEGIN
             pontosDeControle => pontosDeControle,
             funct => funct
         );
-
-    program_c_out <= pcOut;
-    ula_signal_out <= ulaOut;
 
 END ARCHITECTURE;

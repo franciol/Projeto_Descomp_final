@@ -221,7 +221,6 @@ begin
             entradaA => saida_ula, 
             entradaB => dado_lido_mem,
             entradaC => PC_mais_4,
-            entradaD => "00000000000000000000000000000000",
             seletor  => sel_mux_ula_mem,
             saida    => saida_mux_ula_mem
         );
@@ -293,4 +292,6 @@ begin
             saida    => saida_mux_jump
         );
 
+		  pc_out <= PC_s;
+		  ula_out <= saida_ula;
 end architecture;

@@ -70,7 +70,7 @@ begin
 		if (unsigned(enderecoA) = 0) then
 			saidaA <= (others => '0');
 		else
-----			saidaA <= bancoReg(to_integer(unsigned(enderecoA)));
+			saidaA <= bancoReg(to_integer(unsigned(enderecoA)));
 		end if;
 		if (unsigned(enderecoB) = 0) then
 			saidaB <= (others => '0');
