@@ -1,5 +1,5 @@
 Flow report for mips
-Tue Dec  3 14:51:13 2019
+Tue Dec  3 18:31:51 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec  3 14:51:13 2019       ;
+; Flow Status                        ; Successful - Tue Dec  3 18:31:51 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; mips                                        ;
 ; Top-level Entity Name              ; mips                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 5,865                                       ;
-;     Total combinational functions  ; 2,900                                       ;
-;     Dedicated logic registers      ; 3,080                                       ;
-; Total registers                    ; 3080                                        ;
-; Total pins                         ; 65                                          ;
+; Total logic elements               ; 5,747                                       ;
+;     Total combinational functions  ; 2,874                                       ;
+;     Dedicated logic registers      ; 2,988                                       ;
+; Total registers                    ; 2988                                        ;
+; Total pins                         ; 97                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/03/2019 14:48:51 ;
+; Start date & time ; 12/03/2019 18:31:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mips                ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 255543641954553.157539533120713        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 255543641954553.157540868312183        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -100,10 +100,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 953 MB              ; 00:00:31                           ;
+; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 958 MB              ; 00:00:38                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1061 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1072 MB             ; 00:00:01                           ;
-; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:32                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1073 MB             ; 00:00:01                           ;
+; Total                ; 00:00:24     ; --                      ; --                  ; 00:00:39                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -122,7 +122,7 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off mips -c mips
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mips -c mips --vector_source=/home/franciscoa/Documentos/descomp/Projeto_Descomp_final/Waveform8.vwf --testbench_file=/home/franciscoa/Documentos/descomp/Projeto_Descomp_final/simulation/qsim/Waveform8.vwf.vht
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mips -c mips --vector_source=/home/franciscoa/Documentos/descomp/Projeto_Descomp_final/Waveform10.vwf --testbench_file=/home/franciscoa/Documentos/descomp/Projeto_Descomp_final/simulation/qsim/Waveform10.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/franciscoa/Documentos/descomp/Projeto_Descomp_final/simulation/qsim/ mips -c mips
 
 

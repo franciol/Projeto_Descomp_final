@@ -53,15 +53,16 @@ architecture estrutural of fluxo_dados is
 	 signal saida_mux_zout : std_logic_vector(0 downto 0);
     signal saida_mux_ula_mem, saida_mux_banco_ula, saida_mux_beq, saida_mux_jump, saida_mux_jr : std_logic_vector(DATA_WIDTH-1 downto 0);
     signal saida_mux_rd_rt : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0);
-     
+    signal lui_out : std_logic_vector(DATA_WIDTH-1 downto 0);
     -- Controle da ULA
     signal ULActr : std_logic_vector(CTRL_ALU_WIDTH-1 downto 0);
 
     -- Codigos da palavra de controle:
-    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(13 downto 11);
+    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(15 downto 13);
+    alias sel_ext           : std_logic is pontosDeControle(12);
     alias sel_mux_jr        : std_logic is pontosDeControle(11);
     alias sel_bne           : std_logic is pontosDeControle(10);
-	 alias escreve_RC        : std_logic is pontosDeControle(9);
+	 alias escreve_RC       : std_logic is pontosDeControle(9);
     alias escreve_RAM       : std_logic is pontosDeControle(8);
     alias leitura_RAM       : std_logic is pontosDeControle(7);
     alias sel_mux_ula_mem   : std_logic_vector is pontosDeControle(6 downto 5);
@@ -190,8 +191,23 @@ begin
         )
 		port map (
             estendeSinal_IN  => imediato,
-            estendeSinal_OUT => sinal_ext 
+            estendeSinal_OUT => sinal_ext, 
+            sel_ext_in => sel_ext
         ); 
+
+
+        extensorLUI: entity work.extensorLUI 
+        generic map (
+            larguraDadoEntrada => 16,
+            larguraDadoSaida   => DATA_WIDTH
+        )
+		port map (
+            estendeSinal_IN  => imediato,
+            estendeSinal_OUT => lui_out 
+        ); 
+
+
+    
 
      shift: entity work.shift2_imediato 
         generic map (
@@ -221,6 +237,7 @@ begin
             entradaA => saida_ula, 
             entradaB => dado_lido_mem,
             entradaC => PC_mais_4,
+            entradaD => lui_out,
             seletor  => sel_mux_ula_mem,
             saida    => saida_mux_ula_mem
         );
@@ -232,7 +249,7 @@ begin
 		port map (
             entradaA => RT_addr, 
             entradaB => RD_addr,
-            --entradaC => ###########################,
+            entradaC => "11111",
             seletor  => sel_mux_rd_rt,
             saida    => saida_mux_rd_rt
         );

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mips
-Tue Dec  3 14:49:10 2019
+Tue Dec  3 18:31:44 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -14,30 +14,30 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: fluxo_dados:FD
- 12. Parameter Settings for User Entity Instance: fluxo_dados:FD|bancoRegistradores:BR
- 13. Parameter Settings for User Entity Instance: fluxo_dados:FD|ULA:ULA
- 14. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:PC
- 15. Parameter Settings for User Entity Instance: fluxo_dados:FD|somador:Somador_imediato
- 16. Parameter Settings for User Entity Instance: fluxo_dados:FD|soma4:Somador
- 17. Parameter Settings for User Entity Instance: fluxo_dados:FD|ROM:ROM
- 18. Parameter Settings for User Entity Instance: fluxo_dados:FD|single_port_RAM:RAM
- 19. Parameter Settings for User Entity Instance: fluxo_dados:FD|estendeSinalGenerico:extensor
- 20. Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2_imediato:shift
- 21. Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2:shift_jump
- 22. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria
- 23. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico4:mux_Rd_Rt
- 24. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_jr
- 25. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_Banco_Ula
- 26. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_beq
- 27. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_zout
- 28. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_jump
- 29. Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt"
- 30. Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria"
- 31. Port Connectivity Checks: "fluxo_dados:FD|Registrador:PC"
- 32. Port Connectivity Checks: "fluxo_dados:FD"
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: fluxo_dados:FD
+ 13. Parameter Settings for User Entity Instance: fluxo_dados:FD|bancoRegistradores:BR
+ 14. Parameter Settings for User Entity Instance: fluxo_dados:FD|ULA:ULA
+ 15. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:PC
+ 16. Parameter Settings for User Entity Instance: fluxo_dados:FD|somador:Somador_imediato
+ 17. Parameter Settings for User Entity Instance: fluxo_dados:FD|soma4:Somador
+ 18. Parameter Settings for User Entity Instance: fluxo_dados:FD|ROM:ROM
+ 19. Parameter Settings for User Entity Instance: fluxo_dados:FD|single_port_RAM:RAM
+ 20. Parameter Settings for User Entity Instance: fluxo_dados:FD|estendeSinalGenerico:extensor
+ 21. Parameter Settings for User Entity Instance: fluxo_dados:FD|extensorLUI:extensorLUI
+ 22. Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2_imediato:shift
+ 23. Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2:shift_jump
+ 24. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria
+ 25. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico4:mux_Rd_Rt
+ 26. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_jr
+ 27. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_Banco_Ula
+ 28. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_beq
+ 29. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_zout
+ 30. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_jump
+ 31. Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt"
+ 32. Port Connectivity Checks: "fluxo_dados:FD|Registrador:PC"
  33. Post-Synthesis Netlist Statistics for Top Partition
  34. Elapsed Time Per Partition
  35. Analysis & Synthesis Messages
@@ -67,16 +67,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec  3 14:49:10 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec  3 18:31:44 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; mips                                        ;
 ; Top-level Entity Name              ; mips                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 5,865                                       ;
-;     Total combinational functions  ; 2,900                                       ;
-;     Dedicated logic registers      ; 3,080                                       ;
-; Total registers                    ; 3080                                        ;
-; Total pins                         ; 65                                          ;
+; Total logic elements               ; 5,747                                       ;
+;     Total combinational functions  ; 2,874                                       ;
+;     Dedicated logic registers      ; 2,988                                       ;
+; Total registers                    ; 2988                                        ;
+; Total pins                         ; 97                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -196,6 +196,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                       ; Library ;
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; extensorLUI.vhd                  ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/extensorLUI.vhd          ;         ;
 ; muxGenerico4.vhd                 ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico4.vhd         ;         ;
 ; ULA.vhd                          ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ULA.vhd                  ;         ;
 ; UC_ULA.vhd                       ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/UC_ULA.vhd               ;         ;
@@ -221,88 +222,192 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 5,865     ;
+; Estimated Total logic elements              ; 5,747     ;
 ;                                             ;           ;
-; Total combinational functions               ; 2900      ;
+; Total combinational functions               ; 2874      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2516      ;
-;     -- 3 input functions                    ; 153       ;
-;     -- <=2 input functions                  ; 231       ;
+;     -- 4 input functions                    ; 2470      ;
+;     -- 3 input functions                    ; 245       ;
+;     -- <=2 input functions                  ; 159       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 2780      ;
+;     -- normal mode                          ; 2754      ;
 ;     -- arithmetic mode                      ; 120       ;
 ;                                             ;           ;
-; Total registers                             ; 3080      ;
-;     -- Dedicated logic registers            ; 3080      ;
+; Total registers                             ; 2988      ;
+;     -- Dedicated logic registers            ; 2988      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 65        ;
+; I/O pins                                    ; 97        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 3080      ;
-; Total fan-out                               ; 20310     ;
-; Average fan-out                             ; 3.32      ;
+; Maximum fan-out                             ; 2988      ;
+; Total fan-out                               ; 20046     ;
+; Average fan-out                             ; 3.31      ;
 +---------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                     ;
-+--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Entity Name        ; Library Name ;
-+--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------------+--------------+
-; |mips                                ; 2900 (0)            ; 3080 (0)                  ; 0           ; 0            ; 0       ; 0         ; 65   ; 0            ; |mips                                             ; mips               ; work         ;
-;    |fluxo_dados:FD|                  ; 2884 (1)            ; 3080 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD                              ; fluxo_dados        ; work         ;
-;       |ROM:ROM|                      ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ROM:ROM                      ; ROM                ; work         ;
-;       |Registrador:PC|               ; 7 (7)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:PC               ; Registrador        ; work         ;
-;       |UC_ULA:UCULA|                 ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|UC_ULA:UCULA                 ; UC_ULA             ; work         ;
-;       |ULA:ULA|                      ; 177 (177)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ULA:ULA                      ; ULA                ; work         ;
-;       |bancoRegistradores:BR|        ; 1039 (1039)         ; 1000 (1000)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|bancoRegistradores:BR        ; bancoRegistradores ; work         ;
-;       |muxGenerico2:mux_Banco_Ula|   ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico2:mux_Banco_Ula   ; muxGenerico2       ; work         ;
-;       |muxGenerico2:mux_jump|        ; 53 (53)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico2:mux_jump        ; muxGenerico2       ; work         ;
-;       |muxGenerico4:mux_Rd_Rt|       ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico4:mux_Rd_Rt       ; muxGenerico4       ; work         ;
-;       |muxGenerico4:mux_Ula_Memoria| ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria ; muxGenerico4       ; work         ;
-;       |single_port_RAM:RAM|          ; 1428 (1428)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|single_port_RAM:RAM          ; single_port_RAM    ; work         ;
-;       |soma4:Somador|                ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|soma4:Somador                ; soma4              ; work         ;
-;       |somador:Somador_imediato|     ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|somador:Somador_imediato     ; somador            ; work         ;
-;    |uc:UC|                           ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|uc:UC                                       ; uc                 ; work         ;
-+--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                         ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name          ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+----------------------+--------------+
+; |mips                                 ; 2874 (0)            ; 2988 (0)                  ; 0           ; 0            ; 0       ; 0         ; 97   ; 0            ; |mips                                              ; mips                 ; work         ;
+;    |fluxo_dados:FD|                   ; 2850 (1)            ; 2988 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD                               ; fluxo_dados          ; work         ;
+;       |ROM:ROM|                       ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ROM:ROM                       ; ROM                  ; work         ;
+;       |Registrador:PC|                ; 7 (7)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:PC                ; Registrador          ; work         ;
+;       |UC_ULA:UCULA|                  ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|UC_ULA:UCULA                  ; UC_ULA               ; work         ;
+;       |ULA:ULA|                       ; 179 (179)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ULA:ULA                       ; ULA                  ; work         ;
+;       |bancoRegistradores:BR|         ; 985 (985)           ; 908 (908)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|bancoRegistradores:BR         ; bancoRegistradores   ; work         ;
+;       |estendeSinalGenerico:extensor| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|estendeSinalGenerico:extensor ; estendeSinalGenerico ; work         ;
+;       |muxGenerico2:mux_Banco_Ula|    ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico2:mux_Banco_Ula    ; muxGenerico2         ; work         ;
+;       |muxGenerico2:mux_jump|         ; 54 (54)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico2:mux_jump         ; muxGenerico2         ; work         ;
+;       |muxGenerico4:mux_Rd_Rt|        ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico4:mux_Rd_Rt        ; muxGenerico4         ; work         ;
+;       |muxGenerico4:mux_Ula_Memoria|  ; 69 (69)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria  ; muxGenerico4         ; work         ;
+;       |single_port_RAM:RAM|           ; 1406 (1406)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|single_port_RAM:RAM           ; single_port_RAM      ; work         ;
+;       |soma4:Somador|                 ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|soma4:Somador                 ; soma4                ; work         ;
+;       |somador:Somador_imediato|      ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|somador:Somador_imediato      ; somador              ; work         ;
+;    |uc:UC|                            ; 24 (24)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|uc:UC                                        ; uc                   ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                     ;
-+---------------------------------------------------+--------------------+
-; Register name                                     ; Reason for Removal ;
-+---------------------------------------------------+--------------------+
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~838 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~710 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~582 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~966 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~806 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~678 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~550 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~934 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~940 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~844 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~812 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~972 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~684 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~588 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~556 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~716 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~938 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~842 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~810 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~970 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~682 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~586 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~554 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~714 ; Lost fanout        ;
-; Total Number of Removed Registers = 24            ;                    ;
-+---------------------------------------------------+--------------------+
++-------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                      ;
++----------------------------------------------------+--------------------+
+; Register name                                      ; Reason for Removal ;
++----------------------------------------------------+--------------------+
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~757  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~885  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~629  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1013 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~755  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~883  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~627  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1011 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~753  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~881  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~625  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1009 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~751  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~879  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~623  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1007 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~749  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~877  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~621  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1005 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~747  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~875  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~619  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1003 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~745  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~873  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~617  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1001 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~743  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~871  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~615  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~999  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~870  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~742  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~614  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~998  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~806  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~678  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~550  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~934  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~838  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~710  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~582  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~966  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~876  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~748  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~620  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1004 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~684  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~812  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~556  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~940  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~716  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~844  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~588  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~972  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~843  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~715  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~587  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~971  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~811  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~683  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~555  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~939  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~841  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~713  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~585  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~969  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~809  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~681  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~553  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~937  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~872  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~744  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~616  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1000 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~680  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~808  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~552  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~936  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~712  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~840  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~584  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~968  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~839  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~711  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~583  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~967  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~807  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~679  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~551  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~935  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~740  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~964  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~708  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~996  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~612  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~836  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~580  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~868  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~737  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~961  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~705  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~993  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~609  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~833  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~577  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~865  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~734  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~958  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~702  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~990  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~606  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~830  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~574  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~862  ; Lost fanout        ;
+; Total Number of Removed Registers = 116            ;                    ;
++----------------------------------------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                ;
++---------------------------------------------------+--------------------+---------------------------------------------------+
+; Register name                                     ; Reason for Removal ; Registers Removed due to This Register            ;
++---------------------------------------------------+--------------------+---------------------------------------------------+
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~757 ; Lost Fanouts       ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~841 ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~755 ; Lost Fanouts       ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~876 ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~743 ; Lost Fanouts       ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~839 ;
++---------------------------------------------------+--------------------+---------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -310,28 +415,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3080  ;
+; Total registers                              ; 2988  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 4     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 3048  ;
+; Number of registers using Clock Enable       ; 2958  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[0]  ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[31] ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[14] ;
-; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |mips|fluxo_dados:FD|ULA:ULA|Mux15             ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |mips|uc:UC|pontosDeControle[8]                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|UC_ULA:UCULA|ALUctr[2]    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[0]               ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[30]              ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[9]               ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria|saida[0]  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria|saida[20] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |mips|uc:UC|pontosDeControle[3]                             ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |mips|fluxo_dados:FD|ULA:ULA|Mux8                           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|muxGenerico4:mux_Rd_Rt|saida[0]        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|UC_ULA:UCULA|ALUctr[1]                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 
 
 +-------------------------------------------------------------+
@@ -431,6 +539,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|extensorLUI:extensorLUI ;
++--------------------+-------+--------------------------------------------------------+
+; Parameter Name     ; Value ; Type                                                   ;
++--------------------+-------+--------------------------------------------------------+
+; larguradadoentrada ; 16    ; Signed Integer                                         ;
+; larguradadosaida   ; 32    ; Signed Integer                                         ;
++--------------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2_imediato:shift ;
 +----------------+-------+----------------------------------------------------------+
@@ -526,18 +645,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+-------------------------------------+
 ; Port     ; Type  ; Severity ; Details                             ;
 +----------+-------+----------+-------------------------------------+
-; entradac ; Input ; Info     ; Stuck at GND                        ;
+; entradac ; Input ; Info     ; Stuck at VCC                        ;
 ; entradad ; Input ; Info     ; Stuck at GND                        ;
 +----------+-------+----------+-------------------------------------+
-
-
-+-------------------------------------------------------------------------+
-; Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria" ;
-+----------+-------+----------+-------------------------------------------+
-; Port     ; Type  ; Severity ; Details                                   ;
-+----------+-------+----------+-------------------------------------------+
-; entradad ; Input ; Info     ; Stuck at GND                              ;
-+----------+-------+----------+-------------------------------------------+
 
 
 +-----------------------------------------------------------+
@@ -550,37 +660,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+-------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fluxo_dados:FD"                                                                                 ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                             ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; instrucao[25..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 65                          ;
-; cycloneiii_ff         ; 3080                        ;
-;     ENA               ; 3048                        ;
+; boundary_port         ; 97                          ;
+; cycloneiii_ff         ; 2988                        ;
+;     ENA               ; 2958                        ;
 ;     SLD               ; 4                           ;
-;     plain             ; 28                          ;
-; cycloneiii_lcell_comb ; 2900                        ;
+;     plain             ; 26                          ;
+; cycloneiii_lcell_comb ; 2880                        ;
 ;     arith             ; 120                         ;
 ;         2 data inputs ; 29                          ;
 ;         3 data inputs ; 91                          ;
-;     normal            ; 2780                        ;
-;         1 data inputs ; 20                          ;
-;         2 data inputs ; 182                         ;
-;         3 data inputs ; 62                          ;
-;         4 data inputs ; 2516                        ;
+;     normal            ; 2760                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 25                          ;
+;         2 data inputs ; 110                         ;
+;         3 data inputs ; 154                         ;
+;         4 data inputs ; 2470                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 19.70                       ;
-; Average LUT depth     ; 12.49                       ;
+; Average LUT depth     ; 12.30                       ;
 +-----------------------+-----------------------------+
 
 
@@ -589,7 +691,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:11     ;
 +----------------+--------------+
 
 
@@ -599,9 +701,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Dec  3 14:48:51 2019
+    Info: Processing started: Tue Dec  3 18:31:22 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mips -c mips
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file extensorLUI.vhd
+    Info (12022): Found design unit 1: extensorLUI-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/extensorLUI.vhd Line: 19
+    Info (12023): Found entity 1: extensorLUI File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/extensorLUI.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4.vhd
     Info (12022): Found design unit 1: muxGenerico4-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico4.vhd Line: 19
     Info (12023): Found entity 1: muxGenerico4 File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico4.vhd Line: 4
@@ -630,7 +735,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file shift2.
     Info (12022): Found design unit 1: shift2-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2.vhd Line: 16
     Info (12023): Found entity 1: shift2 File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ROM.vhd
-    Info (12022): Found design unit 1: ROM-initFileROM File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 15
+    Info (12022): Found design unit 1: ROM-assincrona File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 15
     Info (12023): Found entity 1: ROM File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file Registrador.vhd
     Info (12022): Found design unit 1: Registrador-rtl File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/Registrador.vhd Line: 26
@@ -657,22 +762,24 @@ Info (12021): Found 2 design units, including 1 entities, in source file bancoRe
     Info (12023): Found entity 1: bancoRegistradores File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 6
 Info (12127): Elaborating entity "mips" for the top level hierarchy
 Info (12128): Elaborating entity "fluxo_dados" for hierarchy "fluxo_dados:FD" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 36
-Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "fluxo_dados:FD|bancoRegistradores:BR" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 90
-Info (12128): Elaborating entity "ULA" for hierarchy "fluxo_dados:FD|ULA:ULA" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 107
-Info (12128): Elaborating entity "UC_ULA" for hierarchy "fluxo_dados:FD|UC_ULA:UCULA" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 119
-Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:PC" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 128
-Info (12128): Elaborating entity "somador" for hierarchy "fluxo_dados:FD|somador:Somador_imediato" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 140
-Info (12128): Elaborating entity "soma4" for hierarchy "fluxo_dados:FD|soma4:Somador" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 150
-Info (12128): Elaborating entity "ROM" for hierarchy "fluxo_dados:FD|ROM:ROM" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 160
-Warning (10541): VHDL Signal Declaration warning at ROM.vhd(18): used implicit default value for signal "content" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 18
-Info (12128): Elaborating entity "single_port_RAM" for hierarchy "fluxo_dados:FD|single_port_RAM:RAM" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 171
-Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "fluxo_dados:FD|estendeSinalGenerico:extensor" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 186
-Info (12128): Elaborating entity "shift2_imediato" for hierarchy "fluxo_dados:FD|shift2_imediato:shift" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 196
-Info (12128): Elaborating entity "shift2" for hierarchy "fluxo_dados:FD|shift2:shift_jump" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 206
-Info (12128): Elaborating entity "muxGenerico4" for hierarchy "fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 216
-Info (12128): Elaborating entity "muxGenerico4" for hierarchy "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 228
-Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_jr" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 240
-Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_zout" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 273
+Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "fluxo_dados:FD|bancoRegistradores:BR" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 91
+Info (12128): Elaborating entity "ULA" for hierarchy "fluxo_dados:FD|ULA:ULA" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 108
+Info (12128): Elaborating entity "UC_ULA" for hierarchy "fluxo_dados:FD|UC_ULA:UCULA" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 120
+Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:PC" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 129
+Info (12128): Elaborating entity "somador" for hierarchy "fluxo_dados:FD|somador:Somador_imediato" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 141
+Info (12128): Elaborating entity "soma4" for hierarchy "fluxo_dados:FD|soma4:Somador" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 151
+Info (12128): Elaborating entity "ROM" for hierarchy "fluxo_dados:FD|ROM:ROM" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 161
+Warning (10541): VHDL Signal Declaration warning at ROM.vhd(44): used implicit default value for signal "memROM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 44
+Info (12128): Elaborating entity "single_port_RAM" for hierarchy "fluxo_dados:FD|single_port_RAM:RAM" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 172
+Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "fluxo_dados:FD|estendeSinalGenerico:extensor" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 187
+Warning (10492): VHDL Process Statement warning at estendeSinalGenerico.vhd(24): signal "sel_ext_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/estendeSinalGenerico.vhd Line: 24
+Info (12128): Elaborating entity "extensorLUI" for hierarchy "fluxo_dados:FD|extensorLUI:extensorLUI" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 199
+Info (12128): Elaborating entity "shift2_imediato" for hierarchy "fluxo_dados:FD|shift2_imediato:shift" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 212
+Info (12128): Elaborating entity "shift2" for hierarchy "fluxo_dados:FD|shift2:shift_jump" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 222
+Info (12128): Elaborating entity "muxGenerico4" for hierarchy "fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 232
+Info (12128): Elaborating entity "muxGenerico4" for hierarchy "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 245
+Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_jr" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 257
+Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_zout" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 290
 Info (12128): Elaborating entity "uc" for hierarchy "uc:UC" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 47
 Info (276014): Found 2 instances of uninferred RAM logic
     Info (276007): RAM logic "fluxo_dados:FD|bancoRegistradores:BR|bancoReg" is uninferred due to asynchronous read logic File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 56
@@ -681,19 +788,21 @@ Warning (113028): 46 out of 64 addresses are uninitialized. The Quartus Prime so
     Warning (113026): Memory Initialization File Address 16 is not initialized File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROMcontent.mif Line: 1
     Warning (113027): Addresses ranging from 18 to 30 are not initialized File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROMcontent.mif Line: 1
     Warning (113027): Addresses ranging from 32 to 63 are not initialized File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROMcontent.mif Line: 1
-Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (64) in the Memory Initialization File "/home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROMcontent.mif" -- setting initial value for remaining addresses to 0
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "inst_out[20]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 12
+    Warning (13410): Pin "inst_out[30]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 12
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 24 registers lost all their fanouts during netlist optimizations.
+Info (17049): 116 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5994 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5908 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 5929 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 994 megabytes
-    Info: Processing ended: Tue Dec  3 14:49:10 2019
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:32
+    Info (21059): Implemented 96 output pins
+    Info (21061): Implemented 5811 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 998 megabytes
+    Info: Processing ended: Tue Dec  3 18:31:44 2019
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:38
 
 

@@ -9,7 +9,7 @@ USE work.constantesMIPS.ALL;
 ENTITY mips IS
     PORT (
         clk : IN STD_LOGIC;
-
+        inst_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         program_c_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         ula_signal_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0)
     );
@@ -27,7 +27,7 @@ ARCHITECTURE estrutural OF mips IS
     -- signal clk  : STD_LOGIC;
 
     ALIAS opcode : std_logic_vector(OPCODE_WIDTH - 1 DOWNTO 0) IS instrucao(31 DOWNTO 26);
-    ALIAS funct  : std_logic_vector(FUNCT_WIDTH - 1 DOWNTO 0) IS instrucao(5 DOWNTO 0);
+    ALIAS funct : std_logic_vector(FUNCT_WIDTH - 1 DOWNTO 0) IS instrucao(5 DOWNTO 0);
 BEGIN
 
     -- CLOCK generator auxiliar para simulação
@@ -51,5 +51,5 @@ BEGIN
             pontosDeControle => pontosDeControle,
             funct => funct
         );
-
+    inst_out <= instrucao;
 END ARCHITECTURE;
