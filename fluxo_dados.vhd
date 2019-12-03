@@ -14,7 +14,10 @@ entity fluxo_dados is
     (
         clk			            : IN STD_LOGIC;
         pontosDeControle        : IN STD_LOGIC_VECTOR(CONTROLWORD_WIDTH-1 DOWNTO 0);
-        instrucao               : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
+        instrucao               : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
+
+        pc_out                  : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
+        ula_out                 : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
     );
 end entity;
 
@@ -30,7 +33,7 @@ architecture estrutural of fluxo_dados is
 
     -- Sinais auxiliares para a ULA
     signal saida_ula : std_logic_vector(DATA_WIDTH-1 downto 0);
-    signal Z_out : std_logic;
+    signal Z_out : std_logic_vector(0 downto 0);
 
     -- Sinais auxiliares para a lógica do PC
     signal PC_s, PC_mais_4, PC_mais_4_mais_imediato, entrada_somador_beq : std_logic_vector(DATA_WIDTH-1 downto 0);
@@ -47,7 +50,7 @@ architecture estrutural of fluxo_dados is
             
     -- Sinais auxiliares dos MUXs
 	 signal beq_or_bne : std_logic;
-	 signal saida_mux_zout : std_logic;
+	 signal saida_mux_zout : std_logic_vector(0 downto 0);
     signal saida_mux_ula_mem, saida_mux_banco_ula, saida_mux_beq, saida_mux_jump, saida_mux_jr : std_logic_vector(DATA_WIDTH-1 downto 0);
     signal saida_mux_rd_rt : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0);
      
@@ -55,14 +58,14 @@ architecture estrutural of fluxo_dados is
     signal ULActr : std_logic_vector(CTRL_ALU_WIDTH-1 downto 0);
 
     -- Codigos da palavra de controle:
-    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(12 downto 10);
-    alias sel_mux_jr        : std_logic is pontosDeControle(9);
-    alias sel_bne           : std_logic is pontosDeControle(8);
-	 alias escreve_RC        : std_logic is pontosDeControle(7);
-    alias escreve_RAM       : std_logic is pontosDeControle(6);
-    alias leitura_RAM       : std_logic is pontosDeControle(5);
-    alias sel_mux_ula_mem   : std_logic is pontosDeControle(4);
-    alias sel_mux_rd_rt     : std_logic is pontosDeControle(3);
+    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(13 downto 11);
+    alias sel_mux_jr        : std_logic is pontosDeControle(11);
+    alias sel_bne           : std_logic is pontosDeControle(10);
+	 alias escreve_RC        : std_logic is pontosDeControle(9);
+    alias escreve_RAM       : std_logic is pontosDeControle(8);
+    alias leitura_RAM       : std_logic is pontosDeControle(7);
+    alias sel_mux_ula_mem   : std_logic_vector is pontosDeControle(6 downto 5);
+    alias sel_mux_rd_rt     : std_logic_vector is pontosDeControle(4 downto 3);
     alias sel_mux_banco_ula : std_logic is pontosDeControle(2);
     alias sel_beq           : std_logic is pontosDeControle(1);
     alias sel_mux_jump      : std_logic is pontosDeControle(0);
@@ -110,7 +113,7 @@ begin
             B   => saida_mux_banco_ula,
             ctr => ULActr,
             C   => saida_ula,
-            Z   => Z_out
+            Z   => Z_out(0)
         );
     
     UCULA : entity work.uc_ula 
@@ -218,6 +221,7 @@ begin
             entradaA => saida_ula, 
             entradaB => dado_lido_mem,
             entradaC => PC_mais_4,
+            entradaD => "00000000000000000000000000000000",
             seletor  => sel_mux_ula_mem,
             saida    => saida_mux_ula_mem
         );
@@ -263,7 +267,7 @@ begin
 		port map (
             entradaA => PC_mais_4,
             entradaB => PC_mais_4_mais_imediato,
-            seletor  => saida_mux_zout AND beq_or_bne,
+            seletor  => saida_mux_zout(0) AND beq_or_bne,
             saida    => saida_mux_beq
         );
 

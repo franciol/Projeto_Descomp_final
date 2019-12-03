@@ -32,6 +32,6 @@ BEGIN
         ctrlTipoORI  WHEN opcode = opCodeORI   ELSE
         ctrlTipoSLTI WHEN opcode = opCodeSLTI  ELSE
         ctrlTipoJAL  WHEN opcode = opCodeJAL   ELSE
-        ("00000000000");
+        (others => '0');
 
 END bhv;

@@ -6,7 +6,7 @@ package constantesMIPS is
 
   constant FUNCT_WIDTH : natural := 6;
   constant OPCODE_WIDTH : natural := 6;
-  constant CONTROLWORD_WIDTH : natural := 11;
+  constant CONTROLWORD_WIDTH : natural := 15;
   constant DATA_WIDTH : natural := 32;
   constant ADDR_WIDTH : natural := 32;
   constant REGBANK_ADDR_WIDTH : natural := 5;
@@ -79,37 +79,37 @@ package constantesMIPS is
     -- 1: sel_mux_beq:          0 PC+4  1 PC+4+imediato
     -- 0: sel_mux_jump:         0 saida mux_beq 1 PC+4 & imediato
 
--- ControlWorld Bit:    12-10       9            8             7             6             5               4                3                 2                 1                0
---Instrução  Opcode     ALUop     JR_MUX    sel_mux_bne    escreve_RC    escreve_RAM   leitura_RAM   sel_mux_ula_mem   sel_mux_rd_rt   sel_mux_banco_ula    sel_mux_beq     sel_mux_jump
---Tipo R    |00.0000  | read  |     0     |      0      |      1       |      0      |      X      |        0        |       1       |         0         |       0       |       0       |
---BEQ       |00.0100  | sub   |     0     |      0      |      0       |      0      |      X      |        X        |       X       |         0         |       1       |       0       |
---BNE       |00.0101  | sub   |     0     |      1      |      0       |      0      |      X      |        X        |       X       |         0         |       0       |       0       | 
---LW        |10.0011  | add   |     0     |      0      |      1       |      0      |      1      |        1        |       0       |         1         |       0       |       0       |
---SW        |10.1011  | add   |     0     |      0      |      0       |      1      |      X      |        X        |       X       |         1         |       0       |       0       |
---LUI       |10.1011  | add   |     0     |      0      |      0       |      0      |      X      |        X        |       X       |         1         |       0       |       0       |
---ADDI      |00.1000  | add   |     0     |      0      |      1       |      0      |      X      |        1        |       0       |         0         |       0       |       0       |
---ANDI      |00.1100  | and   |     0     |      0      |      1       |      0      |      X      |        1        |       0       |         0         |       0       |       0       |
---ORI       |00.1101  | or    |     0     |      0      |      1       |      0      |      X      |        1        |       0       |         0         |       0       |       0       |
---SLTI      |00.1010  | sub   |     0     |      0      |      1       |      0      |      X      |        1        |       0       |         0         |       0       |       0       |
---J         |00.0010  | X     |     0     |      0      |      0       |      0      |      X      |        X        |       X       |         X         |       0       |       1       |
---JAL       |00.0011  | X     |     0     |      0      |      0       |      0      |      X      |        X        |       X       |         X         |       0       |       1       |
---JR        |00.0000  | X     |     1     |      0      |      0       |      0      |      X      |        1        |       0       |         0         |       0       |       0       |
+-- ControlWorld Bit:    14-12       11           10            9              8             7             5-6               3-4                 2                 1               0
+--Instrução  Opcode     ALUop     JR_MUX    sel_mux_bne    escreve_RC    escreve_RAM   leitura_RAM   sel_mux_ula_mem   sel_mux_rd_rt    sel_mux_banco_ula    sel_mux_beq    sel_mux_jump
+--Tipo R    |00.0000  | read  |     0     |      0      |      1       |      0      |      X      |       00        |       01       |         0         |       0       |       0       |
+--BEQ       |00.0100  | sub   |     0     |      0      |      0       |      0      |      X      |       XX        |       XX       |         0         |       1       |       0       |
+--BNE       |00.0101  | sub   |     0     |      1      |      0       |      0      |      X      |       XX        |       XX       |         0         |       0       |       0       | 
+--LW        |10.0011  | add   |     0     |      0      |      1       |      0      |      1      |       01        |       00       |         1         |       0       |       0       |
+--SW        |10.1011  | add   |     0     |      0      |      0       |      1      |      X      |       XX        |       XX       |         1         |       0       |       0       |
+--LUI       |10.1011  | add   |     0     |      0      |      0       |      0      |      X      |       XX        |       XX       |         1         |       0       |       0       |
+--ADDI      |00.1000  | add   |     0     |      0      |      1       |      0      |      X      |       01        |       00       |         0         |       0       |       0       |
+--ANDI      |00.1100  | and   |     0     |      0      |      1       |      0      |      X      |       01        |       00       |         0         |       0       |       0       |
+--ORI       |00.1101  | or    |     0     |      0      |      1       |      0      |      X      |       01        |       00       |         0         |       0       |       0       |
+--SLTI      |00.1010  | sub   |     0     |      0      |      1       |      0      |      X      |       01        |       00       |         0         |       0       |       0       |
+--J         |00.0010  | X     |     0     |      0      |      0       |      0      |      X      |       XX        |       XX       |         X         |       0       |       1       |
+--JAL       |00.0011  | X     |     0     |      0      |      0       |      0      |      X      |       XX        |       XX       |         X         |       0       |       1       |
+--JR        |00.0000  | X     |     1     |      0      |      0       |      0      |      X      |       01        |       00       |         0         |       0       |       0       |
 
 --  Mux1: mux([PC+4, BEQ]/J);  Mux2: mux(Rt/Rd); Mux3: mux(Rt/imediato);  Mux4: mux(ULA/mem).
 
-    constant ctrlTipoR:      ctrlWorld_t := readFunctULA &  "0010X01000";
-    constant ctrlTipoJ:      ctrlWorld_t := aluOpDC      &  "0000XXXX01";
-    constant ctrlTipoBEQ:    ctrlWorld_t := aluOpSub     &  "0000XXX010";
-    constant ctrlTipoBNE:    ctrlWorld_t := aluOpSub     &  "0100XXX000";
-    constant ctrlTipoLW:     ctrlWorld_t := aluOpAdd     &  "0010110100";
-    constant ctrlTipoSW:     ctrlWorld_t := aluOpAdd     &  "0001XXX100";
-    constant ctrlTipoLUI:    ctrlWorld_t := aluOpAdd     &  "0000XXX100";
-    constant ctrlTipoADDI:   ctrlWorld_t := aluOpAdd     &  "0010X10000";
-    constant ctrlTipoANDI:   ctrlWorld_t := aluOpAnd     &  "0010X10000";
-    constant ctrlTipoORI:    ctrlWorld_t := aluOpOr      &  "0010X10000";
-    constant ctrlTipoSLTI:   ctrlWorld_t := aluOpSub     &  "0010X10000";
-    constant ctrlTipoJAL:    ctrlWorld_t := aluOpDC      &  "0000XXXX01";
-    constant ctrlTipoJR :    ctrlWorld_t := aluOpDC      &  "1000XXXX01";
+    constant ctrlTipoR:      ctrlWorld_t := readFunctULA &  "0010X0001000";
+    constant ctrlTipoJ:      ctrlWorld_t := aluOpDC      &  "0000XXXXXX01";
+    constant ctrlTipoBEQ:    ctrlWorld_t := aluOpSub     &  "0000XXXXX010";
+    constant ctrlTipoBNE:    ctrlWorld_t := aluOpSub     &  "0100XXXXX000";
+    constant ctrlTipoLW:     ctrlWorld_t := aluOpAdd     &  "001010100100";
+    constant ctrlTipoSW:     ctrlWorld_t := aluOpAdd     &  "0001XXXXX100";
+    constant ctrlTipoLUI:    ctrlWorld_t := aluOpAdd     &  "0000XXXXX100";
+    constant ctrlTipoADDI:   ctrlWorld_t := aluOpAdd     &  "0010X0100000";
+    constant ctrlTipoANDI:   ctrlWorld_t := aluOpAnd     &  "0010X0100000";
+    constant ctrlTipoORI:    ctrlWorld_t := aluOpOr      &  "0010X0100000";
+    constant ctrlTipoSLTI:   ctrlWorld_t := aluOpSub     &  "0010X0100000";
+    constant ctrlTipoJAL:    ctrlWorld_t := aluOpDC      &  "0000XXXXXX01";
+    constant ctrlTipoJR :    ctrlWorld_t := aluOpDC      &  "1000X0100000";
 
 end package constantesMIPS;
 

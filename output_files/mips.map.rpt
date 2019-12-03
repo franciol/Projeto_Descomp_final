@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mips
-Tue Dec  3 13:40:55 2019
+Tue Dec  3 14:35:09 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -10,7 +10,35 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: fluxo_dados:FD
+ 10. Parameter Settings for User Entity Instance: fluxo_dados:FD|bancoRegistradores:BR
+ 11. Parameter Settings for User Entity Instance: fluxo_dados:FD|ULA:ULA
+ 12. Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:PC
+ 13. Parameter Settings for User Entity Instance: fluxo_dados:FD|somador:Somador_imediato
+ 14. Parameter Settings for User Entity Instance: fluxo_dados:FD|soma4:Somador
+ 15. Parameter Settings for User Entity Instance: fluxo_dados:FD|ROM:ROM
+ 16. Parameter Settings for User Entity Instance: fluxo_dados:FD|single_port_RAM:RAM
+ 17. Parameter Settings for User Entity Instance: fluxo_dados:FD|estendeSinalGenerico:extensor
+ 18. Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2_imediato:shift
+ 19. Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2:shift_jump
+ 20. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria
+ 21. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico4:mux_Rd_Rt
+ 22. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_jr
+ 23. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_Banco_Ula
+ 24. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_beq
+ 25. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_zout
+ 26. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_jump
+ 27. Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt"
+ 28. Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria"
+ 29. Port Connectivity Checks: "fluxo_dados:FD|Registrador:PC"
+ 30. Port Connectivity Checks: "fluxo_dados:FD"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +65,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Dec  3 13:40:55 2019           ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec  3 14:35:09 2019       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; mips                                        ;
 ; Top-level Entity Name              ; mips                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 65                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -158,15 +186,348 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; muxGenerico4.vhd                 ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico4.vhd         ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ULA.vhd                  ;         ;
+; UC_ULA.vhd                       ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/UC_ULA.vhd               ;         ;
+; uc.vhd                           ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/uc.vhd                   ;         ;
+; somador.vhd                      ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/somador.vhd              ;         ;
+; soma4.vhd                        ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/soma4.vhd                ;         ;
+; single_port_RAM.vhd              ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/single_port_RAM.vhd      ;         ;
+; shift2_imediato.vhd              ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2_imediato.vhd      ;         ;
+; shift2.vhd                       ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2.vhd               ;         ;
+; ROM.vhd                          ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd                  ;         ;
+; Registrador.vhd                  ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/Registrador.vhd          ;         ;
+; muxGenerico2.vhd                 ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico2.vhd         ;         ;
+; mips.vhd                         ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd                 ;         ;
+; fluxo_dados.vhd                  ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd          ;         ;
+; estendeSinalGenerico.vhd         ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/estendeSinalGenerico.vhd ;         ;
+; constantesMIPS.vhd               ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/constantesMIPS.vhd       ;         ;
+; bancoRegistradores.vhd           ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd   ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 65    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 65    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |mips                      ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 65   ; 0            ; |mips               ; mips        ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; largurarom     ; 8     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|bancoRegistradores:BR ;
++---------------------+-------+-----------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                ;
++---------------------+-------+-----------------------------------------------------+
+; larguradados        ; 32    ; Signed Integer                                      ;
+; larguraendbancoregs ; 5     ; Signed Integer                                      ;
++---------------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|ULA:ULA ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; num_bits       ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|Registrador:PC ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; num_bits       ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|somador:Somador_imediato ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|soma4:Somador ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                   ;
+; incremento     ; 4     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|ROM:ROM ;
++-----------------+-------+-------------------------------------------+
+; Parameter Name  ; Value ; Type                                      ;
++-----------------+-------+-------------------------------------------+
+; datawidth       ; 32    ; Signed Integer                            ;
+; addrwidth       ; 8     ; Signed Integer                            ;
+; memoryaddrwidth ; 6     ; Signed Integer                            ;
++-----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|single_port_RAM:RAM ;
++-----------------+-------+-------------------------------------------------------+
+; Parameter Name  ; Value ; Type                                                  ;
++-----------------+-------+-------------------------------------------------------+
+; datawidth       ; 32    ; Signed Integer                                        ;
+; addrwidth       ; 32    ; Signed Integer                                        ;
+; memoryaddrwidth ; 6     ; Signed Integer                                        ;
++-----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|estendeSinalGenerico:extensor ;
++--------------------+-------+--------------------------------------------------------------+
+; Parameter Name     ; Value ; Type                                                         ;
++--------------------+-------+--------------------------------------------------------------+
+; larguradadoentrada ; 16    ; Signed Integer                                               ;
+; larguradadosaida   ; 32    ; Signed Integer                                               ;
++--------------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2_imediato:shift ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; larguradado    ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2:shift_jump ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; larguradado    ; 26    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico4:mux_Rd_Rt ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; larguradados   ; 5     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_jr ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_Banco_Ula ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_beq ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_zout ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_jump ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt" ;
++----------+-------+----------+-------------------------------------+
+; Port     ; Type  ; Severity ; Details                             ;
++----------+-------+----------+-------------------------------------+
+; entradac ; Input ; Info     ; Stuck at GND                        ;
+; entradad ; Input ; Info     ; Stuck at GND                        ;
++----------+-------+----------+-------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria" ;
++----------+-------+----------+-------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                   ;
++----------+-------+----------+-------------------------------------------+
+; entradad ; Input ; Info     ; Stuck at GND                              ;
++----------+-------+----------+-------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|Registrador:PC" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                  ;
+; reset  ; Input ; Info     ; Stuck at VCC                  ;
++--------+-------+----------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD"                                                                                 ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; instrucao[25..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 65                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Dec  3 13:40:46 2019
+    Info: Processing started: Tue Dec  3 14:35:01 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mips -c mips
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4.vhd
+    Info (12022): Found design unit 1: muxGenerico4-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico4.vhd Line: 19
+    Info (12023): Found entity 1: muxGenerico4 File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico4.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULA.vhd
     Info (12022): Found design unit 1: ULA-behv File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ULA.vhd Line: 24
     Info (12023): Found entity 1: ULA File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ULA.vhd Line: 9
@@ -192,7 +553,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file shift2.
     Info (12022): Found design unit 1: shift2-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2.vhd Line: 16
     Info (12023): Found entity 1: shift2 File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ROM.vhd
-    Info (12022): Found design unit 1: ROM-assincrona File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 15
+    Info (12022): Found design unit 1: ROM-initFileROM File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 15
     Info (12023): Found entity 1: ROM File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file Registrador.vhd
     Info (12022): Found design unit 1: Registrador-rtl File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/Registrador.vhd Line: 26
@@ -204,7 +565,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file mips.vh
     Info (12022): Found design unit 1: mips-estrutural File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 18
     Info (12023): Found entity 1: mips File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file fluxo_dados.vhd
-    Info (12022): Found design unit 1: fluxo_dados-estrutural File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 21
+    Info (12022): Found design unit 1: fluxo_dados-estrutural File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 24
     Info (12023): Found entity 1: fluxo_dados File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file estendeSinalGenerico.vhd
     Info (12022): Found design unit 1: estendeSinalGenerico-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/estendeSinalGenerico.vhd Line: 19
@@ -217,11 +578,139 @@ Info (12021): Found 2 design units, including 1 entities, in source file clock_g
 Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistradores.vhd
     Info (12022): Found design unit 1: bancoRegistradores-rtl File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 30
     Info (12023): Found entity 1: bancoRegistradores File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 6
-Error (10482): VHDL error at ROM.vhd(21): object "memROM" is used but not declared File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 21
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 0 warnings
-    Error: Peak virtual memory: 933 megabytes
-    Error: Processing ended: Tue Dec  3 13:40:55 2019
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:23
+Info (12127): Elaborating entity "mips" for the top level hierarchy
+Info (12128): Elaborating entity "fluxo_dados" for hierarchy "fluxo_dados:FD" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 38
+Warning (10541): VHDL Signal Declaration warning at fluxo_dados.vhd(19): used implicit default value for signal "pc_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 19
+Warning (10541): VHDL Signal Declaration warning at fluxo_dados.vhd(20): used implicit default value for signal "ula_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 20
+Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "fluxo_dados:FD|bancoRegistradores:BR" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 90
+Warning (10631): VHDL Process Statement warning at bancoRegistradores.vhd(80): inferring latch(es) for signal or variable "saidaA", which holds its previous value in one or more paths through the process File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[0]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[1]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[2]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[3]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[4]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[5]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[6]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[7]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[8]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[9]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[10]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[11]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[12]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[13]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[14]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[15]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[16]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[17]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[18]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[19]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[20]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[21]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[22]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[23]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[24]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[25]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[26]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[27]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[28]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[29]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[30]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (10041): Inferred latch for "saidaA[31]" at bancoRegistradores.vhd(80) File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 80
+Info (12128): Elaborating entity "ULA" for hierarchy "fluxo_dados:FD|ULA:ULA" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 107
+Info (12128): Elaborating entity "UC_ULA" for hierarchy "fluxo_dados:FD|UC_ULA:UCULA" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 119
+Warning (10620): VHDL warning at UC_ULA.vhd(26): comparison between unequal length operands always returns FALSE File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/UC_ULA.vhd Line: 26
+Warning (10620): VHDL warning at UC_ULA.vhd(25): comparison between unequal length operands always returns FALSE File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/UC_ULA.vhd Line: 25
+Warning (10620): VHDL warning at UC_ULA.vhd(24): comparison between unequal length operands always returns FALSE File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/UC_ULA.vhd Line: 24
+Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:PC" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 128
+Info (12128): Elaborating entity "somador" for hierarchy "fluxo_dados:FD|somador:Somador_imediato" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 140
+Info (12128): Elaborating entity "soma4" for hierarchy "fluxo_dados:FD|soma4:Somador" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 150
+Info (12128): Elaborating entity "ROM" for hierarchy "fluxo_dados:FD|ROM:ROM" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 160
+Warning (10541): VHDL Signal Declaration warning at ROM.vhd(18): used implicit default value for signal "content" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 18
+Info (12128): Elaborating entity "single_port_RAM" for hierarchy "fluxo_dados:FD|single_port_RAM:RAM" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 171
+Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "fluxo_dados:FD|estendeSinalGenerico:extensor" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 186
+Info (12128): Elaborating entity "shift2_imediato" for hierarchy "fluxo_dados:FD|shift2_imediato:shift" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 196
+Info (12128): Elaborating entity "shift2" for hierarchy "fluxo_dados:FD|shift2:shift_jump" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 206
+Info (12128): Elaborating entity "muxGenerico4" for hierarchy "fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 216
+Info (12128): Elaborating entity "muxGenerico4" for hierarchy "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 229
+Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_jr" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 241
+Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_zout" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 274
+Info (12128): Elaborating entity "uc" for hierarchy "uc:UC" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 49
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "program_c_out[0]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[1]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[2]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[3]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[4]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[5]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[6]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[7]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[8]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[9]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[10]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[11]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[12]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[13]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[14]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[15]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[16]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[17]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[18]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[19]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[20]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[21]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[22]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[23]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[24]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[25]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[26]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[27]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[28]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[29]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[30]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "program_c_out[31]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 13
+    Warning (13410): Pin "ula_signal_out[0]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[1]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[2]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[3]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[4]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[5]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[6]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[7]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[8]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[9]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[10]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[11]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[12]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[13]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[14]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[15]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[16]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[17]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[18]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[19]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[20]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[21]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[22]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[23]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[24]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[25]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[26]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[27]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[28]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[29]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[30]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+    Warning (13410): Pin "ula_signal_out[31]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 14
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 11
+Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 64 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
+    Info: Peak virtual memory: 948 megabytes
+    Info: Processing ended: Tue Dec  3 14:35:09 2019
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:20
 
 

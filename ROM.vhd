@@ -12,19 +12,14 @@ entity ROM IS
           Dado     : OUT STD_LOGIC_VECTOR (dataWidth-1 DOWNTO 0) );
 end entity;
 
-architecture assincrona OF ROM IS
-  type blocoMemoria IS ARRAY(0 TO 2**memoryAddrWidth - 1) OF std_logic_vector(dataWidth-1 DOWNTO 0);
+architecture initFileROM of ROM is
 
-
-  --signal memROM: blocoMemoria := initMemory;
+  type memory_t is array (2**addrWidth -1 downto 0) of std_logic_vector (dataWidth-1 downto 0);
+  signal content: memory_t;
   attribute ram_init_file : string;
-  attribute ram_init_file of memROM:
+  attribute ram_init_file of content:
   signal is "ROMcontent.mif";
-
--- Utiliza uma quantidade menor de endereços locais:
-   signal EnderecoLocal : std_logic_vector(memoryAddrWidth-1 downto 0);
-
-begin
-  EnderecoLocal <= Endereco(memoryAddrWidth+1 downto 2);
-  Dado <= memROM (to_integer(unsigned(EnderecoLocal)));
-end architecture;
+  
+  begin
+     Dado <= content(to_integer(unsigned(Endereco)));
+  end architecture;
