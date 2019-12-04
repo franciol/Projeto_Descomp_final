@@ -2,317 +2,312 @@
 -- file: fluxo_dados.vhd
 -- date: 18/10/2019
 
-library ieee;
-use ieee.std_logic_1164.all;
-use work.constantesMIPS.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE work.constantesMIPS.ALL;
 
-entity fluxo_dados is
-    generic (
-        larguraROM          : natural := 8 -- deve ser menor ou igual a 32
+ENTITY fluxo_dados IS
+    GENERIC (
+        larguraROM : NATURAL := 8 -- deve ser menor ou igual a 32
     );
-	port
-    (
-        clk			            : IN STD_LOGIC;
-        pontosDeControle        : IN STD_LOGIC_VECTOR(CONTROLWORD_WIDTH-1 DOWNTO 0);
-        instrucao               : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
+    PORT (
+        clk : IN STD_LOGIC;
+        pontosDeControle : IN STD_LOGIC_VECTOR(CONTROLWORD_WIDTH - 1 DOWNTO 0);
+        instrucao : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
 
-        pc_out                  : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
-        ula_out                 : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
-        saidaA1                 : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0); 
-        saidaB1                 : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
+        pc_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+        ula_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+        saidaA1 : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+        saidaB1 : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+        zout : OUT std_logic_vector(0 DOWNTO 0)
     );
-end entity;
+END ENTITY;
 
-architecture estrutural of fluxo_dados is
+ARCHITECTURE estrutural OF fluxo_dados IS
 
     -- Declaração de sinais auxiliares
-    
+
     -- Sinais auxiliar da instrução
-    signal instrucao_s : std_logic_vector(DATA_WIDTH-1 downto 0);
+    SIGNAL instrucao_s : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
 
     -- Sinais auxiliares para o banco de registradores
-    signal RA, RB : std_logic_vector(DATA_WIDTH-1 downto 0);
+    SIGNAL RA, RB : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
 
     -- Sinais auxiliares para a ULA
-    signal saida_ula : std_logic_vector(DATA_WIDTH-1 downto 0);
-    signal Z_out : std_logic_vector(0 downto 0);
+    SIGNAL saida_ula : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
+    SIGNAL Z_out : std_logic_vector(0 DOWNTO 0);
 
     -- Sinais auxiliares para a lógica do PC
-    signal PC_s, PC_mais_4, PC_mais_4_mais_imediato, entrada_somador_beq : std_logic_vector(DATA_WIDTH-1 downto 0);
+    SIGNAL PC_s, PC_mais_4, PC_mais_4_mais_imediato, entrada_somador_beq : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
 
     -- Sinais auxiliares para a RAM
-    signal dado_lido_mem : std_logic_vector(DATA_WIDTH-1 downto 0);
+    SIGNAL dado_lido_mem : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
 
     -- Sinais auxiliares para os componentes manipuladores do imediato
-    signal sinal_ext : std_logic_vector(DATA_WIDTH-1 downto 0);
+    SIGNAL sinal_ext : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
 
     -- Sinais auxiliares para os componentes manipuladores do endereço de jump
-    signal PC_4_concat_imed : std_logic_vector(DATA_WIDTH-1 downto 0);
-    signal saida_shift_jump : std_logic_vector(27 downto 0);
-            
+    SIGNAL PC_4_concat_imed : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
+    SIGNAL saida_shift_jump : std_logic_vector(27 DOWNTO 0);
+
     -- Sinais auxiliares dos MUXs
-	 signal beq_or_bne : std_logic;
-	 signal saida_mux_zout : std_logic_vector(0 downto 0);
-    signal saida_mux_ula_mem, saida_mux_banco_ula, saida_mux_beq, saida_mux_jump, saida_mux_jr : std_logic_vector(DATA_WIDTH-1 downto 0);
-    signal saida_mux_rd_rt : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0);
-    signal lui_out : std_logic_vector(DATA_WIDTH-1 downto 0);
+    SIGNAL beq_or_bne : std_logic;
+    SIGNAL saida_mux_zout : std_logic_vector(0 DOWNTO 0);
+    SIGNAL saida_mux_ula_mem, saida_mux_banco_ula, saida_mux_beq, saida_mux_jump, saida_mux_jr : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
+    SIGNAL saida_mux_rd_rt : std_logic_vector(REGBANK_ADDR_WIDTH - 1 DOWNTO 0);
+    SIGNAL lui_out : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
     -- Controle da ULA
-    signal ULActr : std_logic_vector(CTRL_ALU_WIDTH-1 downto 0);
+    SIGNAL ULActr : std_logic_vector(CTRL_ALU_WIDTH - 1 DOWNTO 0);
 
     -- Codigos da palavra de controle:
-    alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontosDeControle(15 downto 13);
-    alias sel_ext           : std_logic is pontosDeControle(12);
-    alias sel_mux_jr        : std_logic is pontosDeControle(11);
-    alias sel_bne           : std_logic is pontosDeControle(10);
-	 alias escreve_RC       : std_logic is pontosDeControle(9);
-    alias escreve_RAM       : std_logic is pontosDeControle(8);
-    alias leitura_RAM       : std_logic is pontosDeControle(7);
-    alias sel_mux_ula_mem   : std_logic_vector is pontosDeControle(6 downto 5);
-    alias sel_mux_rd_rt     : std_logic_vector is pontosDeControle(4 downto 3);
-    alias sel_mux_banco_ula : std_logic is pontosDeControle(2);
-    alias sel_beq           : std_logic is pontosDeControle(1);
-    alias sel_mux_jump      : std_logic is pontosDeControle(0);
+    ALIAS ULAop : std_logic_vector(ALU_OP_WIDTH - 1 DOWNTO 0) IS pontosDeControle(15 DOWNTO 13);
+    ALIAS sel_ext : std_logic IS pontosDeControle(12);
+    ALIAS sel_mux_jr : std_logic IS pontosDeControle(11);
+    ALIAS sel_bne : std_logic IS pontosDeControle(10);
+    ALIAS escreve_RC : std_logic IS pontosDeControle(9);
+    ALIAS escreve_RAM : std_logic IS pontosDeControle(8);
+    ALIAS leitura_RAM : std_logic IS pontosDeControle(7);
+    ALIAS sel_mux_ula_mem : std_logic_vector IS pontosDeControle(6 DOWNTO 5);
+    ALIAS sel_mux_rd_rt : std_logic_vector IS pontosDeControle(4 DOWNTO 3);
+    ALIAS sel_mux_banco_ula : std_logic IS pontosDeControle(2);
+    ALIAS sel_beq : std_logic IS pontosDeControle(1);
+    ALIAS sel_mux_jump : std_logic IS pontosDeControle(0);
 
     -- Parsing da instrucao
-    alias RS_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is instrucao_s(25 downto 21);
-    alias RT_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is instrucao_s(20 downto 16);
-    alias RD_addr   : std_logic_vector(REGBANK_ADDR_WIDTH-1 downto 0) is instrucao_s(15 downto 11);
-    alias funct     : std_logic_vector(FUNCT_WIDTH-1 downto 0) is  instrucao_s(5 DOWNTO 0);
-    alias imediato  : std_logic_vector(15 downto 0) is instrucao_s(15 downto 0);
+    ALIAS RS_addr : std_logic_vector(REGBANK_ADDR_WIDTH - 1 DOWNTO 0) IS instrucao_s(25 DOWNTO 21);
+    ALIAS RT_addr : std_logic_vector(REGBANK_ADDR_WIDTH - 1 DOWNTO 0) IS instrucao_s(20 DOWNTO 16);
+    ALIAS RD_addr : std_logic_vector(REGBANK_ADDR_WIDTH - 1 DOWNTO 0) IS instrucao_s(15 DOWNTO 11);
+    ALIAS funct : std_logic_vector(FUNCT_WIDTH - 1 DOWNTO 0) IS instrucao_s(5 DOWNTO 0);
+    ALIAS imediato : std_logic_vector(15 DOWNTO 0) IS instrucao_s(15 DOWNTO 0);
 
-begin
+BEGIN
 
     instrucao <= instrucao_s;
-	 
-	 beq_or_bne <= sel_beq OR sel_bne;
+
+    beq_or_bne <= sel_beq OR sel_bne;
 
     -- Ajuste do PC para jump (concatena com imediato multiplicado por 4)
-    PC_4_concat_imed <= PC_mais_4(31 downto 28) & saida_shift_jump;
+    PC_4_concat_imed <= PC_mais_4(31 DOWNTO 28) & saida_shift_jump;
 
     -- Banco de registradores
-     BR: entity work.bancoRegistradores 
-        generic map (
-            larguraDados => DATA_WIDTH, 
+    BR : ENTITY work.bancoRegistradores
+        GENERIC MAP(
+            larguraDados => DATA_WIDTH,
             larguraEndBancoRegs => 5
         )
-        port map (
+        PORT MAP(
             enderecoA => RS_addr,
             enderecoB => RT_addr,
             enderecoC => saida_mux_rd_rt,
-            clk          => clk,
-            dadoEscritaC => saida_mux_ula_mem, 
-            escreveC     => escreve_RC,
-            saidaA       => RA,
-            saidaB       => RB
+            clk => clk,
+            dadoEscritaC => saida_mux_ula_mem,
+            escreveC => escreve_RC,
+            saidaA => RA,
+            saidaB => RB
         );
-    
+
     -- ULA
-     ULA: entity work.ULA
-        generic map (
+    ULA : ENTITY work.ULA
+        GENERIC MAP(
             NUM_BITS => DATA_WIDTH
         )
-		port map (
-            A   => RA,
-            B   => saida_mux_banco_ula,
+        PORT MAP(
+            A => RA,
+            B => saida_mux_banco_ula,
             ctr => ULActr,
-            C   => saida_ula,
-            Z   => Z_out(0)
+            C => saida_ula,
+            Z => Z_out(0)
         );
-    
-    UCULA : entity work.uc_ula 
-        port map
+
+    UCULA : ENTITY work.uc_ula
+        PORT MAP
         (
-            funct  => funct,
-            ALUop  => ULAop,
+            funct => funct,
+            ALUop => ULAop,
             ALUctr => ULActr
         );
-     
+
     -- PC e somadores
-     PC: entity work.Registrador
-        generic map (
+    PC : ENTITY work.Registrador
+        GENERIC MAP(
             NUM_BITS => DATA_WIDTH
         )
-		port map (
+        PORT MAP(
             data_out => PC_s,
-            data_in  => saida_mux_jump,
-            clk      => clk,
-            enable   => '1',
-            reset    => '1' -- reset negado
+            data_in => saida_mux_jump,
+            clk => clk,
+            enable => '1',
+            reset => '1' -- reset negado
         );
-    
-     Somador_imediato: entity work.somador 
-        generic map (
+
+    Somador_imediato : ENTITY work.somador
+        GENERIC MAP(
             larguraDados => DATA_WIDTH
         )
-		port map (
+        PORT MAP(
             entradaA => entrada_somador_beq,
             entradaB => PC_mais_4,
-            saida    => PC_mais_4_mais_imediato
+            saida => PC_mais_4_mais_imediato
         );
-    
-     Somador: entity work.soma4
-        generic map (
+
+    Somador : ENTITY work.soma4
+        GENERIC MAP(
             larguraDados => DATA_WIDTH
         )
-		port map (
+        PORT MAP(
             entrada => PC_s,
-            saida   => PC_mais_4
-        ); 
+            saida => PC_mais_4
+        );
 
     -- ROM
-    ROM: entity work.ROM 
-        generic map (
-            dataWidth => DATA_WIDTH, 
+    ROM : ENTITY work.ROM
+        GENERIC MAP(
+            dataWidth => DATA_WIDTH,
             addrWidth => larguraROM
-        ) 
-		port map (
-            endereco => PC_s(larguraROM-1 downto 0),
-            dado     => instrucao_s
+        )
+        PORT MAP(
+            endereco => PC_s(larguraROM - 1 DOWNTO 0),
+            dado => instrucao_s
         );
-    
+
     -- RAM: escreve valor lido no registrador B no endereço de memória de acordo com a saída da ULA
-     RAM: entity work.single_port_RAM 
-        generic map (
-            dataWidth => DATA_WIDTH, 
+    RAM : ENTITY work.single_port_RAM
+        GENERIC MAP(
+            dataWidth => DATA_WIDTH,
             addrWidth => ADDR_WIDTH
         )
-		port map (
-            endereco    => saida_ula, 
-            we          => escreve_RAM,
-            re          => leitura_RAM,
-            clk         => clk,
-            dado_write  => RB,
-            dado_read   => dado_lido_mem
-        ); 
+        PORT MAP(
+            endereco => saida_ula,
+            we => escreve_RAM,
+            re => leitura_RAM,
+            clk => clk,
+            dado_write => RB,
+            dado_read => dado_lido_mem
+        );
 
-     -- Componentes manipuladores do imediato
-     extensor: entity work.estendeSinalGenerico 
-        generic map (
+    -- Componentes manipuladores do imediato
+    extensor : ENTITY work.estendeSinalGenerico
+        GENERIC MAP(
             larguraDadoEntrada => 16,
-            larguraDadoSaida   => DATA_WIDTH
+            larguraDadoSaida => DATA_WIDTH
         )
-		port map (
-            estendeSinal_IN  => imediato,
-            estendeSinal_OUT => sinal_ext, 
+        PORT MAP(
+            estendeSinal_IN => imediato,
+            estendeSinal_OUT => sinal_ext,
             sel_ext_in => sel_ext
-        ); 
-
-
-        extensorLUI: entity work.extensorLUI 
-        generic map (
+        );
+    extensorLUI : ENTITY work.extensorLUI
+        GENERIC MAP(
             larguraDadoEntrada => 16,
-            larguraDadoSaida   => DATA_WIDTH
+            larguraDadoSaida => DATA_WIDTH
         )
-		port map (
-            estendeSinal_IN  => imediato,
-            estendeSinal_OUT => lui_out 
-        ); 
-
-
-    
-
-     shift: entity work.shift2_imediato 
-        generic map (
+        PORT MAP(
+            estendeSinal_IN => imediato,
+            estendeSinal_OUT => lui_out
+        );
+    shift : ENTITY work.shift2_imediato
+        GENERIC MAP(
             larguraDado => DATA_WIDTH
         )
-		port map (
-            shift_IN  => sinal_ext,
+        PORT MAP(
+            shift_IN => sinal_ext,
             shift_OUT => entrada_somador_beq
         );
-    
+
     -- Componentes manipuladores do endereço de jump
-     shift_jump: entity work.shift2 
-        generic map (
+    shift_jump : ENTITY work.shift2
+        GENERIC MAP(
             larguraDado => 26
         )
-		port map (
-            shift_IN  => instrucao_s(25 downto 0),
+        PORT MAP(
+            shift_IN => instrucao_s(25 DOWNTO 0),
             shift_OUT => saida_shift_jump
         );
-    
+
     -- MUXs
-     mux_Ula_Memoria: entity work.muxGenerico4 
-        generic map (
+    mux_Ula_Memoria : ENTITY work.muxGenerico4
+        GENERIC MAP(
             larguraDados => DATA_WIDTH
         )
-		port map (
-            entradaA => saida_ula, 
+        PORT MAP(
+            entradaA => saida_ula,
             entradaB => dado_lido_mem,
             entradaC => PC_mais_4,
             entradaD => lui_out,
-            seletor  => sel_mux_ula_mem,
-            saida    => saida_mux_ula_mem
+            seletor => sel_mux_ula_mem,
+            saida => saida_mux_ula_mem
         );
-	 
-     mux_Rd_Rt: entity work.muxGenerico4 
-        generic map (
+
+    mux_Rd_Rt : ENTITY work.muxGenerico4
+        GENERIC MAP(
             larguraDados => REGBANK_ADDR_WIDTH
         )
-		port map (
-            entradaA => RT_addr, 
+        PORT MAP(
+            entradaA => RT_addr,
             entradaB => RD_addr,
             entradaC => "11111",
-            seletor  => sel_mux_rd_rt,
-            saida    => saida_mux_rd_rt
+            seletor => sel_mux_rd_rt,
+            saida => saida_mux_rd_rt
         );
-    
-     mux_jr: entity work.muxGenerico2
-        generic map (
+
+    mux_jr : ENTITY work.muxGenerico2
+        GENERIC MAP(
             larguraDados => DATA_WIDTH
         )
-		port map (
-            entradaA => saida_mux_beq, 
-            entradaB => RA,  
-            seletor  => sel_mux_jr,
-            saida    => saida_mux_jr
+        PORT MAP(
+            entradaA => saida_mux_beq,
+            entradaB => RA,
+            seletor => sel_mux_jr,
+            saida => saida_mux_jr
         );
-	
-     mux_Banco_Ula: entity work.muxGenerico2 
-        generic map (
+
+    mux_Banco_Ula : ENTITY work.muxGenerico2
+        GENERIC MAP(
             larguraDados => DATA_WIDTH
         )
-		port map (
-            entradaA => RB, 
-            entradaB => sinal_ext,  
-            seletor  => sel_mux_banco_ula,
-            saida    => saida_mux_banco_ula
+        PORT MAP(
+            entradaA => RB,
+            entradaB => sinal_ext,
+            seletor => sel_mux_banco_ula,
+            saida => saida_mux_banco_ula
         );
-		
-     mux_beq: entity work.muxGenerico2 
-        generic map (
+
+    mux_beq : ENTITY work.muxGenerico2
+        GENERIC MAP(
             larguraDados => DATA_WIDTH
         )
-		port map (
+        PORT MAP(
             entradaA => PC_mais_4,
             entradaB => PC_mais_4_mais_imediato,
-            seletor  => saida_mux_zout(0) AND beq_or_bne,
-            saida    => saida_mux_beq
+            seletor => saida_mux_zout(0) AND beq_or_bne,
+            saida => saida_mux_beq
         );
 
-	  mux_zout: entity work.muxGenerico2 
-        generic map (
+    mux_zout : ENTITY work.muxGenerico2
+        GENERIC MAP(
             larguraDados => 1
         )
-		port map (
+        PORT MAP(
             entradaA => NOT(Z_out),
             entradaB => Z_out,
-            seletor  => sel_beq,
-            saida    => saida_mux_zout
-        );
-		
-     mux_jump: entity work.muxGenerico2 
-        generic map (
-            larguraDados => DATA_WIDTH
-        )
-		port map (
-            entradaA => saida_mux_jr,
-            entradaB => PC_4_concat_imed,
-            seletor  => sel_mux_jump,
-            saida    => saida_mux_jump
+            seletor => sel_beq,
+            saida => saida_mux_zout
         );
 
-		  pc_out <= PC_s;
-          ula_out <= saida_ula;
-          saidaA1 <= RA;
-          saidaB1 <= saida_mux_banco_ula;
-end architecture;
+    mux_jump : ENTITY work.muxGenerico2
+        GENERIC MAP(
+            larguraDados => DATA_WIDTH
+        )
+        PORT MAP(
+            entradaA => saida_mux_jr,
+            entradaB => PC_4_concat_imed,
+            seletor => sel_mux_jump,
+            saida => saida_mux_jump
+        );
+
+    pc_out <= PC_s;
+    ula_out <= saida_ula;
+    saidaA1 <= RA;
+    saidaB1 <= saida_mux_banco_ula;
+    zout <= Z_out;
+END ARCHITECTURE;

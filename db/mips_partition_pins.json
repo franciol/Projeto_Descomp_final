@@ -76,10 +76,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "inst_out[18]",
-					"strict" : false
-				},
-				{
 					"name" : "inst_out[19]",
 					"strict" : false
 				},
@@ -100,35 +96,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "inst_out[25]",
-					"strict" : false
-				},
-				{
-					"name" : "inst_out[26]",
-					"strict" : false
-				},
-				{
-					"name" : "inst_out[27]",
-					"strict" : false
-				},
-				{
 					"name" : "inst_out[28]",
-					"strict" : false
-				},
-				{
-					"name" : "inst_out[29]",
-					"strict" : false
-				},
-				{
-					"name" : "inst_out[31]",
-					"strict" : false
-				},
-				{
-					"name" : "program_c_out[0]",
-					"strict" : false
-				},
-				{
-					"name" : "program_c_out[1]",
 					"strict" : false
 				},
 				{
@@ -524,115 +492,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[4]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[5]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[6]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[7]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[8]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[9]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[10]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[11]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[12]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[13]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[14]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[15]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[16]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[17]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[18]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[19]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[20]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[21]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[22]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[23]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[24]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[25]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[26]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[27]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[28]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[29]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[30]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[31]",
+					"name" : "zout[0]",
 					"strict" : false
 				},
 				{

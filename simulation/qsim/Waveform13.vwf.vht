@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "12/03/2019 19:55:59"
+-- Generated on "12/03/2019 21:12:25"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          mips
 -- 
@@ -40,6 +40,7 @@ SIGNAL program_c_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL saidaA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL saidaB : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ula_signal_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL zout : STD_LOGIC_VECTOR(0 DOWNTO 0);
 COMPONENT mips
 	PORT (
 	clk : IN STD_LOGIC;
@@ -47,7 +48,8 @@ COMPONENT mips
 	program_c_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	saidaA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	saidaB : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	ula_signal_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+	ula_signal_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	zout : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -59,7 +61,8 @@ BEGIN
 	program_c_out => program_c_out,
 	saidaA => saidaA,
 	saidaB => saidaB,
-	ula_signal_out => ula_signal_out
+	ula_signal_out => ula_signal_out,
+	zout => zout
 	);
 
 -- clk

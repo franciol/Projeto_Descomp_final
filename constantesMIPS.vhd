@@ -90,7 +90,7 @@ package constantesMIPS is
 --ADDI      |00.1000  | add   |   0    |     0     |      0      |      1       |      0      |      X      |       00        |       00       |         1         |       0       |       0       |
 --ANDI      |00.1100  | and   |   1    |     0     |      0      |      1       |      0      |      X      |       00        |       00       |         1         |       0       |       0       |
 --ORI       |00.1101  | or    |   1    |     0     |      0      |      1       |      0      |      X      |       00        |       00       |         1         |       0       |       0       |
---SLTI      |00.1010  | sub   |   0    |     0     |      0      |      1       |      0      |      X      |       00        |       00       |         1         |       0       |       0       |
+--SLTI      |00.1010  | slt   |   0    |     0     |      0      |      1       |      0      |      X      |       00        |       00       |         1         |       0       |       0       |
 --J         |00.0010  | X     |   X    |     0     |      0      |      0       |      0      |      X      |       XX        |       XX       |         X         |       0       |       1       |
 --JAL       |00.0011  | X     |   X    |     0     |      0      |      0       |      0      |      X      |       XX        |       10       |         X         |       0       |       1       |
 --JR        |00.0000  | X     |   X    |     1     |      0      |      0       |      0      |      X      |       01        |       00       |         0         |       0       |       0       |
@@ -106,7 +106,7 @@ package constantesMIPS is
     constant ctrlTipoADDI:   ctrlWorld_t := aluOpAdd     &  "00010X0000100";
     constant ctrlTipoANDI:   ctrlWorld_t := aluOpAnd     &  "10010X0000100";
     constant ctrlTipoORI:    ctrlWorld_t := aluOpOr      &  "10010X0000100";
-    constant ctrlTipoSLTI:   ctrlWorld_t := aluOpSub     &  "00010X0000100";
+    constant ctrlTipoSLTI:   ctrlWorld_t := aluOpSlt     &  "00010X0000100";
     constant ctrlTipoJ:      ctrlWorld_t := aluOpDC      &  "X0000XXXXXX01";
     constant ctrlTipoJAL:    ctrlWorld_t := aluOpDC      &  "X0000XXX10X01";
     constant ctrlTipoJR :    ctrlWorld_t := aluOpDC      &  "X1000X0100000";

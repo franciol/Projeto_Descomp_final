@@ -18,7 +18,7 @@ END ENTITY;
 
 ARCHITECTURE comportamento OF estendeSinalGenerico IS
 BEGIN
-    PROCESS (estendeSinal_IN) IS
+    PROCESS (estendeSinal_IN, sel_ext_in) IS
     BEGIN
 
         IF (sel_ext_in = '0') THEN

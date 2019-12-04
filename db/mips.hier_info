@@ -160,6 +160,7 @@ saidaB[28] <= fluxo_dados:FD.saidaB1[28]
 saidaB[29] <= fluxo_dados:FD.saidaB1[29]
 saidaB[30] <= fluxo_dados:FD.saidaB1[30]
 saidaB[31] <= fluxo_dados:FD.saidaB1[31]
+zout[0] <= fluxo_dados:FD.zout[0]
 
 
 |mips|fluxo_dados:FD
@@ -343,6 +344,7 @@ saidaB1[28] <= muxgenerico2:mux_Banco_Ula.saida[28]
 saidaB1[29] <= muxgenerico2:mux_Banco_Ula.saida[29]
 saidaB1[30] <= muxgenerico2:mux_Banco_Ula.saida[30]
 saidaB1[31] <= muxgenerico2:mux_Banco_Ula.saida[31]
+zout[0] <= ula:ULA.Z
 
 
 |mips|fluxo_dados:FD|bancoRegistradores:BR

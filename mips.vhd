@@ -14,7 +14,8 @@ ENTITY mips IS
         ula_signal_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
 
         saidaA : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-        saidaB : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0)
+        saidaB : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+        zout   : OUT STD_LOGIC_VECTOR(0 downto 0)
     );
 END ENTITY;
 
@@ -46,7 +47,8 @@ BEGIN
             pc_out => program_c_out,
             ula_out => ula_signal_out,
             saidaA1 => saidaA,
-            saidaB1 => saidaB
+            saidaB1 => saidaB,
+            zout => zout
         );
 
     UC : ENTITY work.uc
