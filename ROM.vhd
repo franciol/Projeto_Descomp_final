@@ -38,18 +38,18 @@ architecture assincrona OF ROM IS
     ----    tmp(6) := x"010A_4020"; --add $t0 $t0 $t2 ($t0 := 0x0C)   000000 01000 01010 01000 00000 100000
     ----    tmp(7) := x"110B_FFFE"; --beq $t0 $t3 0xFE(pc := #6)      000100 01000 01011 xFFFE
     ----    tmp(8) := x"0800_0001"; --j 0x01 (pc := #1)               000010 00 x000001
-    tmp(0) := x"014A4022"; --sub $t0 $t2 $t2 ($t0 := 0x00)  
-    tmp(1) := x"018B4022"; --sub $t0 $t4 $t3 ($t0 := 0x01)
-    tmp(2) := x"1140FFFD"; --beq $t2 $zero 0xfffd ($t0 := 0xFF)   000000 01001 01010 01000 00000 100010
-    tmp(5) := x"012A_4024"; --and $t0 $t1 $t2 ($t0 := 0x0A)   000000 01001 01010 01000 00000 100100
+    --tmp(0) := x"014A4022"; --sub $t0 $t2 $t2 ($t0 := 0x00)  
+    --tmp(1) := x"018B4022"; --sub $t0 $t4 $t3 ($t0 := 0x01)
+    --tmp(2) := x"1140FFFD"; --beq $t2 $zero 0xfffd ($t0 := 0xFF)   000000 01001 01010 01000 00000 100010
+    --tmp(5) := x"012A_4024"; --and $t0 $t1 $t2 ($t0 := 0x0A)   000000 01001 01010 01000 00000 100100
 
        return tmp;
     end initMemory;
 
-  signal memROM: blocoMemoria := initMemory;
-  --attribute ram_init_file : string;
-  --attribute ram_init_file of memROM:
-  --signal is "ROMcontent.mif";
+  signal memROM: blocoMemoria;-- := initMemory;
+  attribute ram_init_file : string;
+  attribute ram_init_file of memROM:
+  signal is "ROMcontent.mif";
 
 -- Utiliza uma quantidade menor de endereços locais:
    signal EnderecoLocal : std_logic_vector(memoryAddrWidth-1 downto 0);

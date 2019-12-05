@@ -19,7 +19,7 @@ ENTITY fluxo_dados IS
         ula_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         saidaA1 : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         saidaB1 : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-        zout : OUT std_logic_vector(0 DOWNTO 0)
+        zout,selbeq,saidaZOUT : OUT std_logic_vector(0 DOWNTO 0)
     );
 END ENTITY;
 
@@ -248,7 +248,7 @@ BEGIN
             entradaC => "11111",
             seletor => sel_mux_rd_rt,
             saida => saida_mux_rd_rt
-        );
+    );
 
     mux_jr : ENTITY work.muxGenerico2
         GENERIC MAP(
@@ -279,7 +279,7 @@ BEGIN
         PORT MAP(
             entradaA => PC_mais_4,
             entradaB => PC_mais_4_mais_imediato,
-            seletor => saida_mux_zout(0) AND beq_or_bne,
+            seletor => (saida_mux_zout(0) AND beq_or_bne),
             saida => saida_mux_beq
         );
 
@@ -310,4 +310,6 @@ BEGIN
     saidaA1 <= RA;
     saidaB1 <= saida_mux_banco_ula;
     zout <= Z_out;
+    selbeq(0) <= sel_beq;
+    saidaZOUT <= saida_mux_zout;
 END ARCHITECTURE;
