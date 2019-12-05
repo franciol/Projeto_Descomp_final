@@ -9,10 +9,13 @@ USE work.constantesMIPS.ALL;
 ENTITY mips IS
     PORT (
         clk : IN STD_LOGIC;
+		  KEY : IN STD_LOGIC;
+		  
         inst_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         program_c_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         ula_signal_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
 
+		  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : OUT std_logic_vector(6 DOWNTO 0) := "1111111";
         saidaA : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         saidaB : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         zout   : OUT STD_LOGIC_VECTOR(0 downto 0)
@@ -26,7 +29,10 @@ ARCHITECTURE estrutural OF mips IS
     SIGNAL instrucao : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
     SIGNAL ALUop : STD_LOGIC_VECTOR(ALU_OP_WIDTH - 1 DOWNTO 0);
     SIGNAL ALUctr : STD_LOGIC_VECTOR(CTRL_ALU_WIDTH - 1 DOWNTO 0);
+    SIGNAL saida_ula : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+	 SIGNAL pc_out : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
 
+	 
     -- Sinal de clock auxiliar para simulação
     -- signal clk  : STD_LOGIC;
 
@@ -40,12 +46,12 @@ BEGIN
     FD : ENTITY work.fluxo_dados
         PORT MAP
         (
-            clk => clk,
+            clk => KEY,
             pontosDeControle => pontosDeControle,
             instrucao => instrucao,
 
-            pc_out => program_c_out,
-            ula_out => ula_signal_out,
+            pc_out => pc_out,
+            ula_out => saida_ula,
             saidaA1 => saidaA,
             saidaB1 => saidaB,
             zout => zout
@@ -58,5 +64,73 @@ BEGIN
             pontosDeControle => pontosDeControle,
             funct => funct
         );
+
+	 SEG7_0 : ENTITY work.seg7
+        PORT MAP(
+            dadoHex => saida_ula(3 downto 0),
+            apaga => '0',
+            negativo => '0',
+            overFlow => '0',
+            saida7seg => HEX0
+        );
+	 SEG7_1 : ENTITY work.seg7
+        PORT MAP(
+            dadoHex => saida_ula(7 downto 4),
+            apaga => '0',
+            negativo => '0',
+            overFlow => '0',
+            saida7seg => HEX1
+        );
+	 SEG7_2 : ENTITY work.seg7
+        PORT MAP(
+            dadoHex => saida_ula(11 downto 8),
+            apaga => '0',
+            negativo => '0',
+            overFlow => '0',
+            saida7seg => HEX2
+        );
+	  SEG7_3 : ENTITY work.seg7
+        PORT MAP(
+            dadoHex => saida_ula(15 downto 12),
+            apaga => '0',
+            negativo => '0',
+            overFlow => '0',
+            saida7seg => HEX3
+        );
+	  SEG7_4 : ENTITY work.seg7
+        PORT MAP(
+            dadoHex => pc_out(3 downto 0),
+            apaga => '0',
+            negativo => '0',
+            overFlow => '0',
+            saida7seg => HEX4
+        );
+	  SEG7_5 : ENTITY work.seg7
+        PORT MAP(
+            dadoHex => pc_out(7 downto 4),
+            apaga => '0',
+            negativo => '0',
+            overFlow => '0',
+            saida7seg => HEX5
+        );
+	  SEG7_6 : ENTITY work.seg7
+        PORT MAP(
+            dadoHex => pc_out(11 downto 8),
+            apaga => '0',
+            negativo => '0',
+            overFlow => '0',
+            saida7seg => HEX6
+        );
+	  SEG7_7 : ENTITY work.seg7
+        PORT MAP(
+            dadoHex => pc_out(15 downto 12),
+            apaga => '0',
+            negativo => '0',
+            overFlow => '0',
+            saida7seg => HEX7
+        );
+	
     inst_out <= instrucao;
+	 ula_signal_out <= saida_ula;
+	 program_c_out <= pc_out;
 END ARCHITECTURE;
