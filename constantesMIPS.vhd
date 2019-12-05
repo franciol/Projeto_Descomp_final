@@ -83,7 +83,9 @@ package constantesMIPS is
 --Instrução  Opcode     ALUop   sel_ext   JR_MUX    sel_mux_bne    escreve_RC    escreve_RAM     leitura_RAM   sel_mux_ula_mem   sel_mux_rd_rt    sel_mux_banco_ula    sel_mux_beq    sel_mux_jump
 --Tipo R    |00.0000  | read  |   X    |     0     |      0      |      1       |      0      |      X      |       00        |       01       |         0         |       0       |       0       |
 --BEQ       |00.0100  | sub   |   X    |     0     |      0      |      0       |      0      |      X      |       XX        |       XX       |         0         |       1       |       0       |
+
 --BNE       |00.0101  | sub   |   X    |     0     |      1      |      0       |      0      |      X      |       XX        |       XX       |         0         |       0       |       0       | 
+
 --LW        |10.0011  | add   |   X    |     0     |      0      |      1       |      0      |      1      |       01        |       00       |         1         |       0       |       0       |
 --SW        |10.1011  | add   |   X    |     0     |      0      |      0       |      1      |      X      |       XX        |       XX       |         1         |       0       |       0       |
 --LUI       |10.1011  | add   |   X    |     0     |      0      |      1       |      0      |      X      |       11        |       XX       |         1         |       0       |       0       |

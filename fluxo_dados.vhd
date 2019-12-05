@@ -18,8 +18,8 @@ ENTITY fluxo_dados IS
         pc_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         ula_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
         saidaA1 : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-        saidaB1 : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-        zout,selbeq,saidaZOUT : OUT std_logic_vector(0 DOWNTO 0)
+        saidaB1,saidaMUXBRANCH : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+        zout,selbeq,saidaZOUT : OUT std_logic
     );
 END ENTITY;
 
@@ -35,7 +35,7 @@ ARCHITECTURE estrutural OF fluxo_dados IS
 
     -- Sinais auxiliares para a ULA
     SIGNAL saida_ula : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
-    SIGNAL Z_out : std_logic_vector(0 DOWNTO 0);
+    SIGNAL Z_out : std_logic;
 
     -- Sinais auxiliares para a lógica do PC
     SIGNAL PC_s, PC_mais_4, PC_mais_4_mais_imediato, entrada_somador_beq : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
@@ -52,7 +52,7 @@ ARCHITECTURE estrutural OF fluxo_dados IS
 
     -- Sinais auxiliares dos MUXs
     SIGNAL beq_or_bne : std_logic;
-    SIGNAL saida_mux_zout : std_logic_vector(0 DOWNTO 0);
+    SIGNAL saida_mux_zout : std_logic;
     SIGNAL saida_mux_ula_mem, saida_mux_banco_ula, saida_mux_beq, saida_mux_jump, saida_mux_jr : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
     SIGNAL saida_mux_rd_rt : std_logic_vector(REGBANK_ADDR_WIDTH - 1 DOWNTO 0);
     SIGNAL lui_out : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
@@ -116,7 +116,7 @@ BEGIN
             B => saida_mux_banco_ula,
             ctr => ULActr,
             C => saida_ula,
-            Z => Z_out(0)
+            Z => Z_out
         );
 
     UCULA : ENTITY work.uc_ula
@@ -279,7 +279,7 @@ BEGIN
         PORT MAP(
             entradaA => PC_mais_4,
             entradaB => PC_mais_4_mais_imediato,
-            seletor => (saida_mux_zout(0) AND beq_or_bne),
+            seletor =>  beq_or_bne AND saida_mux_zout,
             saida => saida_mux_beq
         );
 
@@ -288,10 +288,10 @@ BEGIN
             larguraDados => 1
         )
         PORT MAP(
-            entradaA => NOT(Z_out),
-            entradaB => Z_out,
+            entradaA(0) => NOT(Z_out),
+            entradaB(0) => Z_out,
             seletor => sel_beq,
-            saida => saida_mux_zout
+            saida(0) => saida_mux_zout
         );
 
     mux_jump : ENTITY work.muxGenerico2
@@ -310,6 +310,7 @@ BEGIN
     saidaA1 <= RA;
     saidaB1 <= saida_mux_banco_ula;
     zout <= Z_out;
-    selbeq(0) <= sel_beq;
+    selbeq <= sel_beq;
     saidaZOUT <= saida_mux_zout;
+    saidaMUXBRANCH <= saida_mux_beq;
 END ARCHITECTURE;

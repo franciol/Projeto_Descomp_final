@@ -32,8 +32,7 @@ BEGIN
         ulaCtrlAnd WHEN ALUop = aluOpAnd ELSE
         ulaCtrlOr WHEN ALUop = aluOpOr ELSE
         ulaCtrlSlt WHEN ALUop = aluOpSlt ELSE
-        zero WHEN ALUop = aluOpDC ELSE
-        (zero);
+        zero;-- WHEN ALUop = aluOpDC ELSE        (zero);
 
     --process(ALL)
     --begin

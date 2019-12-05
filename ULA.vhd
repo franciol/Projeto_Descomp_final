@@ -46,8 +46,7 @@ BEGIN
 	END PROCESS;
 
 
-	Z <= '1' WHEN unsigned(sub) = unsigned(zero) ELSE
-		'0';
+	Z <= '1' WHEN unsigned(sub) = unsigned(zero) ELSE '0';
 	overflow_s <= (NOT(A(NUM_BITS - 1)) AND NOT(B(NUM_BITS - 1)) AND C_s(NUM_BITS - 1)) OR (A(NUM_BITS - 1) AND B(NUM_BITS - 1) AND NOT(C_s(NUM_BITS - 1)));
 
 	C <= C_s;

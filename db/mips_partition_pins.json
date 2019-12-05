@@ -636,15 +636,143 @@
 					"strict" : false
 				},
 				{
-					"name" : "zout[0]",
+					"name" : "saidaMUXBRANCH[0]",
 					"strict" : false
 				},
 				{
-					"name" : "selbeq[0]",
+					"name" : "saidaMUXBRANCH[1]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaZOUT[0]",
+					"name" : "saidaMUXBRANCH[2]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[3]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[4]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[5]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[6]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[7]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[8]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[9]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[10]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[11]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[12]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[13]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[14]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[15]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[16]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[17]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[18]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[19]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[20]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[21]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[22]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[23]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[24]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[25]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[26]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[27]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[28]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[29]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[30]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaMUXBRANCH[31]",
+					"strict" : false
+				},
+				{
+					"name" : "zout",
+					"strict" : false
+				},
+				{
+					"name" : "selbeq",
+					"strict" : false
+				},
+				{
+					"name" : "saidaZOUT",
 					"strict" : false
 				},
 				{
