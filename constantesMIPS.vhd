@@ -94,7 +94,7 @@ package constantesMIPS is
 --ORI       |00.1101  | or    |   1    |     0     |      0      |      1       |      0      |      X      |       00        |       00       |         1         |       0       |       0       |
 --SLTI      |00.1010  | slt   |   0    |     0     |      0      |      1       |      0      |      X      |       00        |       00       |         1         |       0       |       0       |
 --J         |00.0010  | X     |   X    |     0     |      0      |      0       |      0      |      X      |       XX        |       XX       |         X         |       0       |       1       |
---JAL       |00.0011  | X     |   X    |     0     |      0      |      0       |      0      |      X      |       XX        |       10       |         X         |       0       |       1       |
+--JAL       |00.0011  | X     |   X    |     0     |      0      |      1       |      0      |      X      |       10        |       10       |         X         |       0       |       1       |
 --JR        |00.0000  | X     |   X    |     1     |      0      |      0       |      0      |      X      |       01        |       00       |         0         |       0       |       0       |
  
 --  Mux1: mux([PC+4, BEQ]/J);  Mux2: mux(Rt/Rd); Mux3: mux(Rt/imediato);  Mux4: mux(ULA/mem).
@@ -110,7 +110,7 @@ package constantesMIPS is
     constant ctrlTipoORI:    ctrlWorld_t := aluOpOr      &  "10010X0000100";
     constant ctrlTipoSLTI:   ctrlWorld_t := aluOpSlt     &  "00010X0000100";
     constant ctrlTipoJ:      ctrlWorld_t := aluOpDC      &  "X0000XXXXXX01";
-    constant ctrlTipoJAL:    ctrlWorld_t := aluOpDC      &  "X0000XXX10X01";
+    constant ctrlTipoJAL:    ctrlWorld_t := aluOpDC      &  "X0010X1010X01";
     constant ctrlTipoJR :    ctrlWorld_t := aluOpDC      &  "X1000X0100000";
 
 end package constantesMIPS;

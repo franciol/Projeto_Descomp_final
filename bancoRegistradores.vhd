@@ -48,7 +48,7 @@ architecture rtl of bancoRegistradores is
 		tmp(10) := x"0000000B";
 		tmp(11) := x"0000000C";
 		tmp(12) := x"0000000D";
-		tmp(13) := x"0000000E";
+		tmp(13) := x"00000016";
 		tmp(31) := x"ffffffff";
 		return tmp;
 	end initMemory;

@@ -380,403 +380,235 @@
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[0]",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[1]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[2]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[3]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[4]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[5]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[6]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[7]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[8]",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[9]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[10]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[11]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[12]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[13]",
+					"name" : "HEX1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[14]",
+					"name" : "HEX2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[15]",
+					"name" : "HEX2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[16]",
+					"name" : "HEX2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[17]",
+					"name" : "HEX2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[18]",
+					"name" : "HEX2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[19]",
+					"name" : "HEX2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[20]",
+					"name" : "HEX2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[21]",
+					"name" : "HEX3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[22]",
+					"name" : "HEX3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[23]",
+					"name" : "HEX3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[24]",
+					"name" : "HEX3[3]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[25]",
+					"name" : "HEX3[4]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[26]",
+					"name" : "HEX3[5]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[27]",
+					"name" : "HEX3[6]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[28]",
+					"name" : "HEX4[0]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[29]",
+					"name" : "HEX4[1]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[30]",
+					"name" : "HEX4[2]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaA[31]",
+					"name" : "HEX4[3]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[0]",
+					"name" : "HEX4[4]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[1]",
+					"name" : "HEX4[5]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[2]",
+					"name" : "HEX4[6]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[3]",
+					"name" : "HEX5[0]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[4]",
+					"name" : "HEX5[1]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[5]",
+					"name" : "HEX5[2]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[6]",
+					"name" : "HEX5[3]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[7]",
+					"name" : "HEX5[4]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[8]",
+					"name" : "HEX5[5]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[9]",
+					"name" : "HEX5[6]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[10]",
+					"name" : "HEX6[0]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[11]",
+					"name" : "HEX6[1]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[12]",
+					"name" : "HEX6[2]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[13]",
+					"name" : "HEX6[3]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[14]",
+					"name" : "HEX6[4]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[15]",
+					"name" : "HEX6[5]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[16]",
+					"name" : "HEX6[6]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[17]",
+					"name" : "HEX7[0]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[18]",
+					"name" : "HEX7[1]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[19]",
+					"name" : "HEX7[2]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[20]",
+					"name" : "HEX7[3]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[21]",
+					"name" : "HEX7[4]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[22]",
+					"name" : "HEX7[5]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[23]",
+					"name" : "HEX7[6]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[24]",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "saidaB[25]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[26]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[27]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[28]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[29]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[30]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaB[31]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[0]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[1]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[2]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[3]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[4]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[5]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[6]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[7]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[8]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[9]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[10]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[11]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[12]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[13]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[14]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[15]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[16]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[17]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[18]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[19]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[20]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[21]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[22]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[23]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[24]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[25]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[26]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[27]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[28]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[29]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[30]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaMUXBRANCH[31]",
-					"strict" : false
-				},
-				{
-					"name" : "zout",
-					"strict" : false
-				},
-				{
-					"name" : "selbeq",
-					"strict" : false
-				},
-				{
-					"name" : "saidaZOUT",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
+					"name" : "CLOCK_50",
 					"strict" : false
 				}
 			]

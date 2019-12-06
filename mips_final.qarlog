@@ -1,0 +1,54 @@
+Quartus Prime Archive log --	/home/arqcomp/Desktop/Projeto_Descomp_final/mips_final.qarlog
+
+Archive:	/home/arqcomp/Desktop/Projeto_Descomp_final/mips_final.qar
+Date:		Thu Dec  5 21:32:29 2019
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/arqcomp/Desktop/Projeto_Descomp_final/ROM.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/Registrador.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/UC_ULA.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/ULA.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform1.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform10.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform11.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform12.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform13.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform16.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform17.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform18.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform19.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform2.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform3.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform4.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform5.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform6.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform7.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform8.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/Waveform9.vwf
+/home/arqcomp/Desktop/Projeto_Descomp_final/assignment_defaults.qdf
+/home/arqcomp/Desktop/Projeto_Descomp_final/bancoRegistradores.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/clock_generator.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/constantesMIPS.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/edgeDetector.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/estendeSinalGenerico.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/extensorLUI.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/mips.qpf
+/home/arqcomp/Desktop/Projeto_Descomp_final/mips.qsf
+/home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/mips_assignment_defaults.qdf
+/home/arqcomp/Desktop/Projeto_Descomp_final/muxGenerico2.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/muxGenerico4.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/seg7.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/shift2.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/shift2_imediato.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/single_port_RAM.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/soma4.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/somador.vhd
+/home/arqcomp/Desktop/Projeto_Descomp_final/uc.vhd
+	======= Total: 43 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

@@ -1,6 +1,6 @@
 Analysis & Synthesis report for mips
-Thu Dec  5 18:06:55 2019
-Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Thu Dec  5 21:27:56 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -36,20 +36,29 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  28. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_beq
  29. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_zout
  30. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2:mux_jump
- 31. Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt"
- 32. Port Connectivity Checks: "fluxo_dados:FD|Registrador:PC"
- 33. Post-Synthesis Netlist Statistics for Top Partition
- 34. Elapsed Time Per Partition
- 35. Analysis & Synthesis Messages
+ 31. Port Connectivity Checks: "seg7:SEG7_7"
+ 32. Port Connectivity Checks: "seg7:SEG7_6"
+ 33. Port Connectivity Checks: "seg7:SEG7_5"
+ 34. Port Connectivity Checks: "seg7:SEG7_4"
+ 35. Port Connectivity Checks: "seg7:SEG7_3"
+ 36. Port Connectivity Checks: "seg7:SEG7_2"
+ 37. Port Connectivity Checks: "seg7:SEG7_1"
+ 38. Port Connectivity Checks: "seg7:SEG7_0"
+ 39. Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt"
+ 40. Port Connectivity Checks: "fluxo_dados:FD|Registrador:PC"
+ 41. Port Connectivity Checks: "fluxo_dados:FD"
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2019  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -59,24 +68,23 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 
 
 
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec  5 18:06:55 2019       ;
-; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec  5 21:27:55 2019       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; mips                                        ;
 ; Top-level Entity Name              ; mips                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 5,860                                       ;
-;     Total combinational functions  ; 2,995                                       ;
-;     Dedicated logic registers      ; 3,012                                       ;
-; Total registers                    ; 3012                                        ;
-; Total pins                         ; 196                                         ;
+; Total logic elements               ; 5,791                                       ;
+;     Total combinational functions  ; 2,966                                       ;
+;     Dedicated logic registers      ; 2,973                                       ;
+; Total registers                    ; 2973                                        ;
+; Total pins                         ; 219                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -185,68 +193,70 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.2%      ;
 ;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
-; extensorLUI.vhd                  ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/extensorLUI.vhd          ;         ;
-; muxGenerico4.vhd                 ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico4.vhd         ;         ;
-; ULA.vhd                          ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ULA.vhd                  ;         ;
-; UC_ULA.vhd                       ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/UC_ULA.vhd               ;         ;
-; uc.vhd                           ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/uc.vhd                   ;         ;
-; somador.vhd                      ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/somador.vhd              ;         ;
-; soma4.vhd                        ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/soma4.vhd                ;         ;
-; single_port_RAM.vhd              ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/single_port_RAM.vhd      ;         ;
-; shift2_imediato.vhd              ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2_imediato.vhd      ;         ;
-; shift2.vhd                       ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2.vhd               ;         ;
-; ROM.vhd                          ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd                  ;         ;
-; Registrador.vhd                  ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/Registrador.vhd          ;         ;
-; muxGenerico2.vhd                 ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico2.vhd         ;         ;
-; mips.vhd                         ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd                 ;         ;
-; fluxo_dados.vhd                  ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd          ;         ;
-; estendeSinalGenerico.vhd         ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/estendeSinalGenerico.vhd ;         ;
-; constantesMIPS.vhd               ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/constantesMIPS.vhd       ;         ;
-; bancoRegistradores.vhd           ; yes             ; User VHDL File  ; /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd   ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; extensorLUI.vhd                  ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/extensorLUI.vhd          ;         ;
+; muxGenerico4.vhd                 ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/muxGenerico4.vhd         ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/ULA.vhd                  ;         ;
+; UC_ULA.vhd                       ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/UC_ULA.vhd               ;         ;
+; uc.vhd                           ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/uc.vhd                   ;         ;
+; somador.vhd                      ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/somador.vhd              ;         ;
+; soma4.vhd                        ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/soma4.vhd                ;         ;
+; single_port_RAM.vhd              ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/single_port_RAM.vhd      ;         ;
+; shift2_imediato.vhd              ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/shift2_imediato.vhd      ;         ;
+; shift2.vhd                       ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/shift2.vhd               ;         ;
+; ROM.vhd                          ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/ROM.vhd                  ;         ;
+; Registrador.vhd                  ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/Registrador.vhd          ;         ;
+; muxGenerico2.vhd                 ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/muxGenerico2.vhd         ;         ;
+; mips.vhd                         ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd                 ;         ;
+; fluxo_dados.vhd                  ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd          ;         ;
+; estendeSinalGenerico.vhd         ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/estendeSinalGenerico.vhd ;         ;
+; constantesMIPS.vhd               ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/constantesMIPS.vhd       ;         ;
+; bancoRegistradores.vhd           ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/bancoRegistradores.vhd   ;         ;
+; seg7.vhd                         ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/seg7.vhd                 ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/arqcomp/Desktop/Projeto_Descomp_final/edgeDetector.vhd         ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 5,860     ;
-;                                             ;           ;
-; Total combinational functions               ; 2995      ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2478      ;
-;     -- 3 input functions                    ; 269       ;
-;     -- <=2 input functions                  ; 248       ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 2875      ;
-;     -- arithmetic mode                      ; 120       ;
-;                                             ;           ;
-; Total registers                             ; 3012      ;
-;     -- Dedicated logic registers            ; 3012      ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 196       ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 3012      ;
-; Total fan-out                               ; 20616     ;
-; Average fan-out                             ; 3.22      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimated Total logic elements              ; 5,791                   ;
+;                                             ;                         ;
+; Total combinational functions               ; 2966                    ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 2556                    ;
+;     -- 3 input functions                    ; 224                     ;
+;     -- <=2 input functions                  ; 186                     ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 2846                    ;
+;     -- arithmetic mode                      ; 120                     ;
+;                                             ;                         ;
+; Total registers                             ; 2973                    ;
+;     -- Dedicated logic registers            ; 2973                    ;
+;     -- I/O registers                        ; 0                       ;
+;                                             ;                         ;
+; I/O pins                                    ; 219                     ;
+;                                             ;                         ;
+; Embedded Multiplier 9-bit elements          ; 0                       ;
+;                                             ;                         ;
+; Maximum fan-out node                        ; edgeDetector:EDGE|saida ;
+; Maximum fan-out                             ; 2972                    ;
+; Total fan-out                               ; 20480                   ;
+; Average fan-out                             ; 3.21                    ;
++---------------------------------------------+-------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -254,22 +264,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name          ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+----------------------+--------------+
-; |mips                                 ; 2995 (0)            ; 3012 (0)                  ; 0           ; 0            ; 0       ; 0         ; 196  ; 0            ; |mips                                              ; mips                 ; work         ;
-;    |fluxo_dados:FD|                   ; 2970 (2)            ; 3012 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD                               ; fluxo_dados          ; work         ;
+; |mips                                 ; 2966 (0)            ; 2973 (0)                  ; 0           ; 0            ; 0       ; 0         ; 219  ; 0            ; |mips                                              ; mips                 ; work         ;
+;    |edgeDetector:EDGE|                ; 2 (2)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|edgeDetector:EDGE                            ; edgeDetector         ; work         ;
+;    |fluxo_dados:FD|                   ; 2883 (3)            ; 2972 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD                               ; fluxo_dados          ; work         ;
 ;       |ROM:ROM|                       ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ROM:ROM                       ; ROM                  ; work         ;
-;       |Registrador:PC|                ; 88 (88)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:PC                ; Registrador          ; work         ;
+;       |Registrador:PC|                ; 7 (7)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|Registrador:PC                ; Registrador          ; work         ;
 ;       |UC_ULA:UCULA|                  ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|UC_ULA:UCULA                  ; UC_ULA               ; work         ;
-;       |ULA:ULA|                       ; 178 (178)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ULA:ULA                       ; ULA                  ; work         ;
-;       |bancoRegistradores:BR|         ; 1039 (1039)         ; 932 (932)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|bancoRegistradores:BR         ; bancoRegistradores   ; work         ;
+;       |ULA:ULA|                       ; 177 (177)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|ULA:ULA                       ; ULA                  ; work         ;
+;       |bancoRegistradores:BR|         ; 1005 (1005)         ; 892 (892)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|bancoRegistradores:BR         ; bancoRegistradores   ; work         ;
 ;       |estendeSinalGenerico:extensor| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|estendeSinalGenerico:extensor ; estendeSinalGenerico ; work         ;
 ;       |muxGenerico2:mux_Banco_Ula|    ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico2:mux_Banco_Ula    ; muxGenerico2         ; work         ;
-;       |muxGenerico2:mux_jump|         ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico2:mux_jump         ; muxGenerico2         ; work         ;
-;       |muxGenerico2:mux_zout|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico2:mux_zout         ; muxGenerico2         ; work         ;
+;       |muxGenerico2:mux_jump|         ; 55 (55)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico2:mux_jump         ; muxGenerico2         ; work         ;
 ;       |muxGenerico4:mux_Rd_Rt|        ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico4:mux_Rd_Rt        ; muxGenerico4         ; work         ;
 ;       |muxGenerico4:mux_Ula_Memoria|  ; 68 (68)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria  ; muxGenerico4         ; work         ;
-;       |single_port_RAM:RAM|           ; 1413 (1413)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|single_port_RAM:RAM           ; single_port_RAM      ; work         ;
+;       |single_port_RAM:RAM|           ; 1421 (1421)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|single_port_RAM:RAM           ; single_port_RAM      ; work         ;
 ;       |soma4:Somador|                 ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|soma4:Somador                 ; soma4                ; work         ;
-;       |somador:Somador_imediato|      ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|somador:Somador_imediato      ; somador              ; work         ;
+;       |somador:Somador_imediato|      ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|fluxo_dados:FD|somador:Somador_imediato      ; somador              ; work         ;
+;    |seg7:SEG7_0|                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|seg7:SEG7_0                                  ; seg7                 ; work         ;
+;    |seg7:SEG7_1|                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|seg7:SEG7_1                                  ; seg7                 ; work         ;
+;    |seg7:SEG7_2|                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|seg7:SEG7_2                                  ; seg7                 ; work         ;
+;    |seg7:SEG7_3|                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|seg7:SEG7_3                                  ; seg7                 ; work         ;
+;    |seg7:SEG7_4|                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|seg7:SEG7_4                                  ; seg7                 ; work         ;
+;    |seg7:SEG7_5|                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|seg7:SEG7_5                                  ; seg7                 ; work         ;
+;    |seg7:SEG7_6|                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|seg7:SEG7_6                                  ; seg7                 ; work         ;
+;    |seg7:SEG7_7|                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|seg7:SEG7_7                                  ; seg7                 ; work         ;
 ;    |uc:UC|                            ; 25 (25)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|uc:UC                                        ; uc                   ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -280,74 +298,114 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+--------------------+
 ; Register name                                      ; Reason for Removal ;
 +----------------------------------------------------+--------------------+
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~884  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~756  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~628  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1012 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~882  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~754  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~626  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1010 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~880  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~752  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~624  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1008 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~878  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~750  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~622  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1006 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~876  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~748  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~620  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1004 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~874  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~746  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~618  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1002 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~872  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~744  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~616  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1000 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~757  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~885  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~629  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1013 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~755  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~883  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~627  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1011 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~753  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~881  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~625  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1009 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~751  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~879  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~623  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1007 ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~749  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~877  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~621  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1005 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~813  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~685  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~557  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~941  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~845  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~717  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~589  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~973  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~716  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~844  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~588  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~972  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~684  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~812  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~556  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~940  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~747  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~875  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~619  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1003 ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~811  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~683  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~555  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~939  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~745  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~873  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~617  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1001 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~743  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~871  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~615  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~999  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~870  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~742  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~614  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~998  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~806  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~678  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~550  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~934  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~838  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~710  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~582  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~966  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~878  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~750  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~622  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1006 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~686  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~814  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~558  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~942  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~718  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~846  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~590  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~974  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~876  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~748  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~620  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1004 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~684  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~812  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~556  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~940  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~716  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~844  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~588  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~972  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~843  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~715  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~587  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~971  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~712  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~840  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~584  ; Lost fanout        ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~968  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~811  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~683  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~555  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~939  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~874  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~746  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~618  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1002 ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~682  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~810  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~554  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~938  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~714  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~842  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~586  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~970  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~841  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~713  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~585  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~969  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~809  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~681  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~553  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~937  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~872  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~744  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~616  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~1000 ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~680  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~808  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~552  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~936  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~712  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~840  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~584  ; Lost fanout        ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~968  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~740  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~964  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~708  ; Lost fanout        ;
@@ -372,7 +430,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~830  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~574  ; Lost fanout        ;
 ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~862  ; Lost fanout        ;
-; Total Number of Removed Registers = 92             ;                    ;
+; Total Number of Removed Registers = 132            ;                    ;
 +----------------------------------------------------+--------------------+
 
 
@@ -381,9 +439,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------+--------------------+---------------------------------------------------+
 ; Register name                                     ; Reason for Removal ; Registers Removed due to This Register            ;
 +---------------------------------------------------+--------------------+---------------------------------------------------+
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~884 ; Lost Fanouts       ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~747 ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~882 ; Lost Fanouts       ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~712 ;
-; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~880 ; Lost Fanouts       ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~749 ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~755 ; Lost Fanouts       ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~843 ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~751 ; Lost Fanouts       ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~874 ;
+; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~749 ; Lost Fanouts       ; fluxo_dados:FD|bancoRegistradores:BR|bancoReg~841 ;
 +---------------------------------------------------+--------------------+---------------------------------------------------+
 
 
@@ -392,12 +450,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3012  ;
+; Total registers                              ; 2973  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 29    ;
+; Number of registers using Synchronous Load   ; 4     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2982  ;
+; Number of registers using Clock Enable       ; 2942  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -407,14 +465,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[0]               ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[13]              ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria|saida[0]  ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria|saida[26] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |mips|uc:UC|pontosDeControle[6]                             ;
-; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |mips|fluxo_dados:FD|ULA:ULA|Mux6                           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[1]               ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[31]              ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |mips|fluxo_dados:FD|Registrador:PC|data_s[12]              ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria|saida[13] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria|saida[31] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |mips|uc:UC|pontosDeControle[8]                             ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |mips|fluxo_dados:FD|ULA:ULA|Mux19                          ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|muxGenerico4:mux_Rd_Rt|saida[0]        ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|UC_ULA:UCULA|ALUctr[1]                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |mips|fluxo_dados:FD|UC_ULA:UCULA|ALUctr[2]                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 
 
@@ -616,6 +675,94 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------+
+; Port Connectivity Checks: "seg7:SEG7_7"    ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "seg7:SEG7_6"    ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "seg7:SEG7_5"    ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "seg7:SEG7_4"    ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "seg7:SEG7_3"    ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "seg7:SEG7_2"    ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "seg7:SEG7_1"    ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "seg7:SEG7_0"    ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
 +-------------------------------------------------------------------+
 ; Port Connectivity Checks: "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt" ;
 +----------+-------+----------+-------------------------------------+
@@ -636,29 +783,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+-------------------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD"                                                                               ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; saidaa1        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saidab1        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saidamuxbranch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; zout           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; selbeq         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saidazout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 196                         ;
-; cycloneiii_ff         ; 3012                        ;
-;     ENA               ; 2982                        ;
-;     SLD               ; 29                          ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 2999                        ;
+; boundary_port         ; 219                         ;
+; cycloneiii_ff         ; 2973                        ;
+;     ENA               ; 2942                        ;
+;     SLD               ; 4                           ;
+;     plain             ; 27                          ;
+; cycloneiii_lcell_comb ; 2971                        ;
 ;     arith             ; 120                         ;
 ;         2 data inputs ; 29                          ;
 ;         3 data inputs ; 91                          ;
-;     normal            ; 2879                        ;
+;     normal            ; 2851                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 55                          ;
-;         2 data inputs ; 167                         ;
-;         3 data inputs ; 178                         ;
-;         4 data inputs ; 2478                        ;
+;         1 data inputs ; 57                          ;
+;         2 data inputs ; 104                         ;
+;         3 data inputs ; 133                         ;
+;         4 data inputs ; 2556                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 21.00                       ;
-; Average LUT depth     ; 13.01                       ;
+; Max LUT depth         ; 20.60                       ;
+; Average LUT depth     ; 12.99                       ;
 +-----------------------+-----------------------------+
 
 
@@ -676,108 +837,184 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Dec  5 18:06:36 2019
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu Dec  5 21:27:36 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mips -c mips
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file extensorLUI.vhd
-    Info (12022): Found design unit 1: extensorLUI-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/extensorLUI.vhd Line: 19
-    Info (12023): Found entity 1: extensorLUI File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/extensorLUI.vhd Line: 4
+    Info (12022): Found design unit 1: extensorLUI-comportamento File: /home/arqcomp/Desktop/Projeto_Descomp_final/extensorLUI.vhd Line: 19
+    Info (12023): Found entity 1: extensorLUI File: /home/arqcomp/Desktop/Projeto_Descomp_final/extensorLUI.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4.vhd
-    Info (12022): Found design unit 1: muxGenerico4-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico4.vhd Line: 19
-    Info (12023): Found entity 1: muxGenerico4 File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico4.vhd Line: 4
+    Info (12022): Found design unit 1: muxGenerico4-comportamento File: /home/arqcomp/Desktop/Projeto_Descomp_final/muxGenerico4.vhd Line: 19
+    Info (12023): Found entity 1: muxGenerico4 File: /home/arqcomp/Desktop/Projeto_Descomp_final/muxGenerico4.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULA.vhd
-    Info (12022): Found design unit 1: ULA-behv File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ULA.vhd Line: 24
-    Info (12023): Found entity 1: ULA File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ULA.vhd Line: 9
+    Info (12022): Found design unit 1: ULA-behv File: /home/arqcomp/Desktop/Projeto_Descomp_final/ULA.vhd Line: 24
+    Info (12023): Found entity 1: ULA File: /home/arqcomp/Desktop/Projeto_Descomp_final/ULA.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file UC_ULA.vhd
-    Info (12022): Found design unit 1: UC_ULA-bhv File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/UC_ULA.vhd Line: 17
-    Info (12023): Found entity 1: UC_ULA File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/UC_ULA.vhd Line: 9
+    Info (12022): Found design unit 1: UC_ULA-bhv File: /home/arqcomp/Desktop/Projeto_Descomp_final/UC_ULA.vhd Line: 17
+    Info (12023): Found entity 1: UC_ULA File: /home/arqcomp/Desktop/Projeto_Descomp_final/UC_ULA.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file uc.vhd
-    Info (12022): Found design unit 1: uc-bhv File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/uc.vhd Line: 19
-    Info (12023): Found entity 1: uc File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/uc.vhd Line: 9
+    Info (12022): Found design unit 1: uc-bhv File: /home/arqcomp/Desktop/Projeto_Descomp_final/uc.vhd Line: 19
+    Info (12023): Found entity 1: uc File: /home/arqcomp/Desktop/Projeto_Descomp_final/uc.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
-    Info (12022): Found design unit 1: somador-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/somador.vhd Line: 18
-    Info (12023): Found entity 1: somador File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/somador.vhd Line: 5
+    Info (12022): Found design unit 1: somador-comportamento File: /home/arqcomp/Desktop/Projeto_Descomp_final/somador.vhd Line: 18
+    Info (12023): Found entity 1: somador File: /home/arqcomp/Desktop/Projeto_Descomp_final/somador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file soma4.vhd
-    Info (12022): Found design unit 1: soma4-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/soma4.vhd Line: 18
-    Info (12023): Found entity 1: soma4 File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/soma4.vhd Line: 5
+    Info (12022): Found design unit 1: soma4-comportamento File: /home/arqcomp/Desktop/Projeto_Descomp_final/soma4.vhd Line: 18
+    Info (12023): Found entity 1: soma4 File: /home/arqcomp/Desktop/Projeto_Descomp_final/soma4.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file single_port_RAM.vhd
-    Info (12022): Found design unit 1: single_port_RAM-rtl File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/single_port_RAM.vhd Line: 20
-    Info (12023): Found entity 1: single_port_RAM File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/single_port_RAM.vhd Line: 5
+    Info (12022): Found design unit 1: single_port_RAM-rtl File: /home/arqcomp/Desktop/Projeto_Descomp_final/single_port_RAM.vhd Line: 20
+    Info (12023): Found entity 1: single_port_RAM File: /home/arqcomp/Desktop/Projeto_Descomp_final/single_port_RAM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file shift2_imediato.vhd
-    Info (12022): Found design unit 1: shift2_imediato-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2_imediato.vhd Line: 16
-    Info (12023): Found entity 1: shift2_imediato File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2_imediato.vhd Line: 4
+    Info (12022): Found design unit 1: shift2_imediato-comportamento File: /home/arqcomp/Desktop/Projeto_Descomp_final/shift2_imediato.vhd Line: 16
+    Info (12023): Found entity 1: shift2_imediato File: /home/arqcomp/Desktop/Projeto_Descomp_final/shift2_imediato.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file shift2.vhd
-    Info (12022): Found design unit 1: shift2-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2.vhd Line: 16
-    Info (12023): Found entity 1: shift2 File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/shift2.vhd Line: 4
+    Info (12022): Found design unit 1: shift2-comportamento File: /home/arqcomp/Desktop/Projeto_Descomp_final/shift2.vhd Line: 16
+    Info (12023): Found entity 1: shift2 File: /home/arqcomp/Desktop/Projeto_Descomp_final/shift2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ROM.vhd
-    Info (12022): Found design unit 1: ROM-assincrona File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 15
-    Info (12023): Found entity 1: ROM File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 6
+    Info (12022): Found design unit 1: ROM-assincrona File: /home/arqcomp/Desktop/Projeto_Descomp_final/ROM.vhd Line: 15
+    Info (12023): Found entity 1: ROM File: /home/arqcomp/Desktop/Projeto_Descomp_final/ROM.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file Registrador.vhd
-    Info (12022): Found design unit 1: Registrador-rtl File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/Registrador.vhd Line: 26
-    Info (12023): Found entity 1: Registrador File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/Registrador.vhd Line: 8
+    Info (12022): Found design unit 1: Registrador-rtl File: /home/arqcomp/Desktop/Projeto_Descomp_final/Registrador.vhd Line: 26
+    Info (12023): Found entity 1: Registrador File: /home/arqcomp/Desktop/Projeto_Descomp_final/Registrador.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2.vhd
-    Info (12022): Found design unit 1: muxGenerico2-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico2.vhd Line: 17
-    Info (12023): Found entity 1: muxGenerico2 File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/muxGenerico2.vhd Line: 4
+    Info (12022): Found design unit 1: muxGenerico2-comportamento File: /home/arqcomp/Desktop/Projeto_Descomp_final/muxGenerico2.vhd Line: 17
+    Info (12023): Found entity 1: muxGenerico2 File: /home/arqcomp/Desktop/Projeto_Descomp_final/muxGenerico2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file mips.vhd
-    Info (12022): Found design unit 1: mips-estrutural File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 22
-    Info (12023): Found entity 1: mips File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 9
+    Info (12022): Found design unit 1: mips-estrutural File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 26
+    Info (12023): Found entity 1: mips File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file fluxo_dados.vhd
-    Info (12022): Found design unit 1: fluxo_dados-estrutural File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 26
-    Info (12023): Found entity 1: fluxo_dados File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 9
+    Info (12022): Found design unit 1: fluxo_dados-estrutural File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 26
+    Info (12023): Found entity 1: fluxo_dados File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file estendeSinalGenerico.vhd
-    Info (12022): Found design unit 1: estendeSinalGenerico-comportamento File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/estendeSinalGenerico.vhd Line: 19
-    Info (12023): Found entity 1: estendeSinalGenerico File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/estendeSinalGenerico.vhd Line: 4
+    Info (12022): Found design unit 1: estendeSinalGenerico-comportamento File: /home/arqcomp/Desktop/Projeto_Descomp_final/estendeSinalGenerico.vhd Line: 19
+    Info (12023): Found entity 1: estendeSinalGenerico File: /home/arqcomp/Desktop/Projeto_Descomp_final/estendeSinalGenerico.vhd Line: 4
 Info (12021): Found 1 design units, including 0 entities, in source file constantesMIPS.vhd
-    Info (12022): Found design unit 1: constantesMIPS File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/constantesMIPS.vhd Line: 5
+    Info (12022): Found design unit 1: constantesMIPS File: /home/arqcomp/Desktop/Projeto_Descomp_final/constantesMIPS.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file clock_generator.vhd
-    Info (12022): Found design unit 1: clock_generator-test File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/clock_generator.vhd Line: 18
-    Info (12023): Found entity 1: clock_generator File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/clock_generator.vhd Line: 4
+    Info (12022): Found design unit 1: clock_generator-test File: /home/arqcomp/Desktop/Projeto_Descomp_final/clock_generator.vhd Line: 18
+    Info (12023): Found entity 1: clock_generator File: /home/arqcomp/Desktop/Projeto_Descomp_final/clock_generator.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistradores.vhd
-    Info (12022): Found design unit 1: bancoRegistradores-rtl File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 30
-    Info (12023): Found entity 1: bancoRegistradores File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 6
+    Info (12022): Found design unit 1: bancoRegistradores-rtl File: /home/arqcomp/Desktop/Projeto_Descomp_final/bancoRegistradores.vhd Line: 30
+    Info (12023): Found entity 1: bancoRegistradores File: /home/arqcomp/Desktop/Projeto_Descomp_final/bancoRegistradores.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file seg7.vhd
+    Info (12022): Found design unit 1: seg7-comportamento File: /home/arqcomp/Desktop/Projeto_Descomp_final/seg7.vhd Line: 18
+    Info (12023): Found entity 1: seg7 File: /home/arqcomp/Desktop/Projeto_Descomp_final/seg7.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file edgeDetector.vhd
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/arqcomp/Desktop/Projeto_Descomp_final/edgeDetector.vhd Line: 10
+    Info (12023): Found entity 1: edgeDetector File: /home/arqcomp/Desktop/Projeto_Descomp_final/edgeDetector.vhd Line: 4
 Info (12127): Elaborating entity "mips" for the top level hierarchy
-Info (12128): Elaborating entity "fluxo_dados" for hierarchy "fluxo_dados:FD" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 40
-Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "fluxo_dados:FD|bancoRegistradores:BR" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 93
-Info (12128): Elaborating entity "ULA" for hierarchy "fluxo_dados:FD|ULA:ULA" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 110
-Info (12128): Elaborating entity "UC_ULA" for hierarchy "fluxo_dados:FD|UC_ULA:UCULA" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 122
-Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:PC" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 131
-Info (12128): Elaborating entity "somador" for hierarchy "fluxo_dados:FD|somador:Somador_imediato" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 143
-Info (12128): Elaborating entity "soma4" for hierarchy "fluxo_dados:FD|soma4:Somador" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 153
-Info (12128): Elaborating entity "ROM" for hierarchy "fluxo_dados:FD|ROM:ROM" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 163
-Warning (10541): VHDL Signal Declaration warning at ROM.vhd(50): used implicit default value for signal "memROM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROM.vhd Line: 50
-Info (12128): Elaborating entity "single_port_RAM" for hierarchy "fluxo_dados:FD|single_port_RAM:RAM" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 174
-Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "fluxo_dados:FD|estendeSinalGenerico:extensor" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 189
-Info (12128): Elaborating entity "extensorLUI" for hierarchy "fluxo_dados:FD|extensorLUI:extensorLUI" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 199
-Info (12128): Elaborating entity "shift2_imediato" for hierarchy "fluxo_dados:FD|shift2_imediato:shift" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 208
-Info (12128): Elaborating entity "shift2" for hierarchy "fluxo_dados:FD|shift2:shift_jump" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 218
-Info (12128): Elaborating entity "muxGenerico4" for hierarchy "fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 228
-Info (12128): Elaborating entity "muxGenerico4" for hierarchy "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 241
-Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_jr" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 253
-Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_zout" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/fluxo_dados.vhd Line: 286
-Info (12128): Elaborating entity "uc" for hierarchy "uc:UC" File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 57
+Warning (10541): VHDL Signal Declaration warning at mips.vhd(20): used implicit default value for signal "saidaA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+Warning (10541): VHDL Signal Declaration warning at mips.vhd(21): used implicit default value for signal "saidaB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+Warning (10541): VHDL Signal Declaration warning at mips.vhd(22): used implicit default value for signal "zout" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 22
+Info (12128): Elaborating entity "edgeDetector" for hierarchy "edgeDetector:EDGE" File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 47
+Info (12128): Elaborating entity "fluxo_dados" for hierarchy "fluxo_dados:FD" File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 55
+Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "fluxo_dados:FD|bancoRegistradores:BR" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 93
+Info (12128): Elaborating entity "ULA" for hierarchy "fluxo_dados:FD|ULA:ULA" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 110
+Info (12128): Elaborating entity "UC_ULA" for hierarchy "fluxo_dados:FD|UC_ULA:UCULA" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 122
+Info (12128): Elaborating entity "Registrador" for hierarchy "fluxo_dados:FD|Registrador:PC" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 131
+Info (12128): Elaborating entity "somador" for hierarchy "fluxo_dados:FD|somador:Somador_imediato" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 143
+Info (12128): Elaborating entity "soma4" for hierarchy "fluxo_dados:FD|soma4:Somador" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 153
+Info (12128): Elaborating entity "ROM" for hierarchy "fluxo_dados:FD|ROM:ROM" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 163
+Warning (10541): VHDL Signal Declaration warning at ROM.vhd(57): used implicit default value for signal "memROM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/arqcomp/Desktop/Projeto_Descomp_final/ROM.vhd Line: 57
+Info (12128): Elaborating entity "single_port_RAM" for hierarchy "fluxo_dados:FD|single_port_RAM:RAM" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 174
+Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "fluxo_dados:FD|estendeSinalGenerico:extensor" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 189
+Info (12128): Elaborating entity "extensorLUI" for hierarchy "fluxo_dados:FD|extensorLUI:extensorLUI" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 199
+Info (12128): Elaborating entity "shift2_imediato" for hierarchy "fluxo_dados:FD|shift2_imediato:shift" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 208
+Info (12128): Elaborating entity "shift2" for hierarchy "fluxo_dados:FD|shift2:shift_jump" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 218
+Info (12128): Elaborating entity "muxGenerico4" for hierarchy "fluxo_dados:FD|muxGenerico4:mux_Ula_Memoria" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 228
+Info (12128): Elaborating entity "muxGenerico4" for hierarchy "fluxo_dados:FD|muxGenerico4:mux_Rd_Rt" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 241
+Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_jr" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 253
+Info (12128): Elaborating entity "muxGenerico2" for hierarchy "fluxo_dados:FD|muxGenerico2:mux_zout" File: /home/arqcomp/Desktop/Projeto_Descomp_final/fluxo_dados.vhd Line: 286
+Info (12128): Elaborating entity "uc" for hierarchy "uc:UC" File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 66
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:SEG7_0" File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 74
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276007): RAM logic "fluxo_dados:FD|bancoRegistradores:BR|bancoReg" is uninferred due to asynchronous read logic File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/bancoRegistradores.vhd Line: 57
-    Info (276007): RAM logic "fluxo_dados:FD|single_port_RAM:RAM|ram" is uninferred due to asynchronous read logic File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/single_port_RAM.vhd Line: 23
-Warning (113028): 46 out of 64 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 3 warnings found, and 3 warnings are reported. File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROMcontent.mif Line: 1
-    Warning (113026): Memory Initialization File Address 16 is not initialized File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROMcontent.mif Line: 1
-    Warning (113027): Addresses ranging from 18 to 30 are not initialized File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROMcontent.mif Line: 1
-    Warning (113027): Addresses ranging from 32 to 63 are not initialized File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/ROMcontent.mif Line: 1
+    Info (276007): RAM logic "fluxo_dados:FD|bancoRegistradores:BR|bancoReg" is uninferred due to asynchronous read logic File: /home/arqcomp/Desktop/Projeto_Descomp_final/bancoRegistradores.vhd Line: 57
+    Info (276007): RAM logic "fluxo_dados:FD|single_port_RAM:RAM|ram" is uninferred due to asynchronous read logic File: /home/arqcomp/Desktop/Projeto_Descomp_final/single_port_RAM.vhd Line: 23
+Warning (113028): 46 out of 64 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 3 warnings found, and 3 warnings are reported. File: /home/arqcomp/Desktop/Projeto_Descomp_final/ROMcontent.mif Line: 1
+    Warning (113026): Memory Initialization File Address 16 is not initialized File: /home/arqcomp/Desktop/Projeto_Descomp_final/ROMcontent.mif Line: 1
+    Warning (113027): Addresses ranging from 18 to 30 are not initialized File: /home/arqcomp/Desktop/Projeto_Descomp_final/ROMcontent.mif Line: 1
+    Warning (113027): Addresses ranging from 32 to 63 are not initialized File: /home/arqcomp/Desktop/Projeto_Descomp_final/ROMcontent.mif Line: 1
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "inst_out[20]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 12
-    Warning (13410): Pin "inst_out[30]" is stuck at GND File: /home/franciscoa/Documentos/descomp/Projeto_Descomp_final/mips.vhd Line: 12
+    Warning (13410): Pin "inst_out[20]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 15
+    Warning (13410): Pin "inst_out[30]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 15
+    Warning (13410): Pin "saidaA[0]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[1]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[2]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[3]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[4]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[5]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[6]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[7]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[8]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[9]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[10]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[11]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[12]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[13]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[14]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[15]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[16]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[17]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[18]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[19]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[20]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[21]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[22]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[23]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[24]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[25]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[26]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[27]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[28]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[29]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[30]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaA[31]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 20
+    Warning (13410): Pin "saidaB[0]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[1]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[2]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[3]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[4]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[5]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[6]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[7]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[8]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[9]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[10]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[11]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[12]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[13]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[14]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[15]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[16]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[17]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[18]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[19]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[20]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[21]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[22]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[23]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[24]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[25]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[26]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[27]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[28]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[29]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[30]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "saidaB[31]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 21
+    Warning (13410): Pin "zout[0]" is stuck at GND File: /home/arqcomp/Desktop/Projeto_Descomp_final/mips.vhd Line: 22
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 92 registers lost all their fanouts during netlist optimizations.
+Info (17049): 132 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 6120 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 195 output pins
-    Info (21061): Implemented 5924 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 995 megabytes
-    Info: Processing ended: Thu Dec  5 18:06:55 2019
-    Info: Elapsed time: 00:00:19
+Info (21057): Implemented 6074 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 217 output pins
+    Info (21061): Implemented 5855 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
+    Info: Peak virtual memory: 1035 megabytes
+    Info: Processing ended: Thu Dec  5 21:27:56 2019
+    Info: Elapsed time: 00:00:20
     Info: Total CPU time (on all processors): 00:00:32
 
 

@@ -1,33 +1,35 @@
 # do mips.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:05:58 on Dec 05,2019
+# Start time: 21:19:58 on Dec 05,2019
 # vcom -work work mips.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package VITAL_Timing
 # -- Loading package VITAL_Primitives
-# -- Loading package dffeas_pack
-# -- Loading package altera_primitives_components
 # -- Loading package cycloneive_atom_pack
 # -- Loading package cycloneive_components
+# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
 # -- Compiling entity mips
 # -- Compiling architecture structure of mips
-# End time: 18:05:59 on Dec 05,2019, Elapsed time: 0:00:01
+# End time: 21:19:59 on Dec 05,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:05:59 on Dec 05,2019
-# vcom -work work Waveform17.vwf.vht 
+# Start time: 21:19:59 on Dec 05,2019
+# vcom -work work Waveform19.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mips_vhd_vec_tst
 # -- Compiling architecture mips_arch of mips_vhd_vec_tst
-# End time: 18:05:59 on Dec 05,2019, Elapsed time: 0:00:00
+# End time: 21:19:59 on Dec 05,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.mips_vhd_vec_tst 
-# Start time: 18:05:59 on Dec 05,2019
+# Start time: 21:19:59 on Dec 05,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -39,29 +41,20 @@
 # Loading cycloneive.cycloneive_atom_pack(body)
 # Loading cycloneive.cycloneive_components
 # Loading work.mips(structure)
+# Loading work.hard_block(structure)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneive.cycloneive_io_obuf(arch)
 # Loading cycloneive.cycloneive_io_ibuf(arch)
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 798775 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 940713 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
-# after#33
+# after#35
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-# ** Warning: (vsim-3116) Problem reading symbols from /lib/libpthread.so.0 : module was loaded at an absolute address.
-# ** Warning: (vsim-3116) Problem reading symbols from /lib/librt.so.1 : module was loaded at an absolute address.
-# ** Warning: (vsim-3116) Problem reading symbols from /lib/libdl.so.2 : module was loaded at an absolute address.
-# ** Warning: (vsim-3116) Problem reading symbols from /lib/libm.so.6 : module was loaded at an absolute address.
-# ** Warning: (vsim-3116) Problem reading symbols from /lib/libc.so.6 : module was loaded at an absolute address.
-# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
-# ** Warning: (vsim-3116) Problem reading symbols from /lib/libnss_compat.so.2 : module was loaded at an absolute address.
-# ** Warning: (vsim-3116) Problem reading symbols from /lib/libnss_files.so.2 : module was loaded at an absolute address.
 # Simulation time: 0 ps
 # Simulation time: 0 ps
 # Simulation time: 0 ps
 # Simulation time: 0 ps
 # Simulation time: 0 ps
-# Simulation time: 0 ps
-# Simulation time: 0 ps
-# End time: 18:06:19 on Dec 05,2019, Elapsed time: 0:00:20
-# Errors: 0, Warnings: 10
+# End time: 21:20:15 on Dec 05,2019, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 2

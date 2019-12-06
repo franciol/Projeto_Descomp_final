@@ -26,28 +26,35 @@ architecture assincrona OF ROM IS
       -- $t2 (#10) := 0x0B
       -- $t3 (#11) := 0x0C
       -- $t4 (#12) := 0x0D
-      -- $t5 (#13) := 0x0E
+      -- $t5 (#13) := 0x16
 --
 --    --        -- Inicializa os endereços:
-    --    tmp(0) := x"AC09_0008"; --sw $t1 8($zero) (m(8) := 0x0A)  100011 00000 01001 x0008
-    --    tmp(1) := x"8C08_0008"; --lw $t0 8($zero) ($t0 := 0x0A)   100011 00000 01000 x0008
-    --    tmp(2) := x"012A_4022"; --sub $t0 $t1 $t2 ($t0 := 0xFF)   000000 01001 01010 01000 00000 100010
-    --    tmp(3) := x"012A_4024"; --and $t0 $t1 $t2 ($t0 := 0x0A)   000000 01001 01010 01000 00000 100100
-    --    tmp(4) := x"012A_4025"; --or $t0 $t1 $t2  ($t0 := 0x0B)   000000 01001 01010 01000 00000 100101
-    --    tmp(5) := x"012A_402A"; --slt $t0 $t1 $t2 ($t0 := 0x01)   000000 01001 01010 01000 00000 101010
-    --    tmp(6) := x"010A_4020"; --add $t0 $t0 $t2 ($t0 := 0x0C)   000000 01000 01010 01000 00000 100000
-    --    tmp(7) := x"110B_FFFE"; --beq $t0 $t3 0xFE(pc := #6)      000100 01000 01011 xFFFE
-    --    tmp(8) := x"0800_0001"; --j 0x01 (pc := #1)               000010 00 x000001
-    --tmp(0) := x"01804822"; --sub $t1 $t4 $zero ($t0 := 0x00)          000010 00 x000001
-    --tmp(1) := x"01A0502A"; --slt $t2 $t5 $zero ($t0 := 0x00)  
-    --tmp(2) := x"012A4822"; --sub $t1 $t1 $t2 ($t0 := 0x01)
-    --tmp(3) := x"1520FFFE"; --bne $t1 $zero 0xfffe ($t0 := 0xFF)   000000 01001 01010 01000 00000 100010
-    --tmp(5) := x"018B4822"; --and $t0 $t1 $t2 ($t0 := 0x0A)   000000 01001 01010 01000 00000 100100
-
+--        tmp(0) := x"AC090008"; --sw $t1 8($zero) (m(8) := 0x0A)  100011 00000 01001 x0008
+--        tmp(1) := x"8C080008"; --lw $t0 8($zero) ($t0 := 0x0A)   100011 00000 01000 x0008
+--        tmp(2) := x"012A4022"; --sub $t0 $t1 $t2 ($t0 := 0xFF)   000000 01001 01010 01000 00000 100010
+--        tmp(3) := x"012A4024"; --and $t0 $t1 $t2 ($t0 := 0x0A)   000000 01001 01010 01000 00000 100100
+--        tmp(4) := x"012A4025"; --or $t0 $t1 $t2  ($t0 := 0x0B)   000000 01001 01010 01000 00000 100101
+--        tmp(5) := x"3C08FFFF"; --lui $t0 0xFFFF   ($t0 := 0xFFFF0000)  
+--        tmp(6) := x"2128000A"; --addi $t0 $t1 0x000A ($t0 := 0x00000014)
+--        tmp(7) := x"31080013"; --andi $t0 $t0 0x0013
+--        tmp(8) := x"35880007"; --ori $t0 $t4 0x0007  ($t0 := 0x0000000F)
+--		  tmp(9) := x"2928FFFF"; --slti $t0 $t1 0xFFFF ($t0 := 0x00000000)
+--		  tmp(10) := x"010A4020"; --add $t0 $t0 $t2     ($t0 := 0x0000000B)
+--		  tmp(11) := x"150DFFFE"; --bne $t0 $t5 0xFFFE (pc := #10)
+--		  tmp(12) := X"012A402A"; --slt $t0 $t1 $t2     ($t0 := 0x00000001)
+	 
+--    tmp(0) := x"20090004"; --addi $t1 $zero 0x0004 ($t1 := 0x04)          000010 00 x000001
+--	 tmp(1) := x"00005022"; --sub $t2 $zero $zero ($t2 := 0x00)          000010 00 x000001
+--    tmp(2) := x"200B0001"; --addi $t3 $zero 0x0001 ($t3 := 0x01)          000010 00 x000001
+--	 tmp(3) := x"29AAFFFF";  --slti t2 t5 0xffff    ($t1 := 0x00)
+--    tmp(4) := x"014B5020"; --add $t2 $t2 $t3 ($t2 := 0x01) ($t2 := 0x02) ($t2 := 0x03) ($t2 := 0x04) 
+--    tmp(5) := x"152AFFFE"; --bne $t1 $t2 0xfffe 
+--    tmp(6) := x"018B4822"; --and $t0 $t1 $t2 ($t0 := 0x0A)   000000 01001 01010 01000 00000 100100
+	
        return tmp;
     end initMemory;
 
-  signal memROM: blocoMemoria;--:= initMemory;
+  signal memROM: blocoMemoria;-- := initMemory;
   attribute ram_init_file : string;
   attribute ram_init_file of memROM:
   signal is "ROMcontent.mif";
